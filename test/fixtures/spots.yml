@@ -4,4 +4,5 @@ one:
   placeName: MyString
   lat: 1
   lng: 1
+  created_at: <%= Time.now %>
 

@@ -4,3 +4,4 @@ one:
   spot_id: 1
   pictureURL: MyString
   comment: MyText
+  created_at: <%= Time.now %>
