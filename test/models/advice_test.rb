@@ -2,8 +2,7 @@ require 'test_helper'
 
 class AdviceTest < ActiveSupport::TestCase
   def setup
-    @spot = Spot.new(placeName: "a", lat: 0, lng: 0)
-    @spot.save
+    @spot = spots(:one)
     @advice = Advice.new(spot_id: @spot.id, pictureURL: "a", comment: "aa")
   end
 
