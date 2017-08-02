@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  placeName: MyString
-  lat: 1
-  lng: 1
+  spot_id: 1
+  pictureURL: MyString
+  comment: MyText
   created_at: <%= Time.now %>
   updated_at: <%= Time.now %>
