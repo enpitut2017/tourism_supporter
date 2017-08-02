@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'advices/new'
+
   get 'spots/show'
 
 
