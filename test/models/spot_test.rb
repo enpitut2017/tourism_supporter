@@ -20,7 +20,7 @@ class SpotTest < ActiveSupport::TestCase
   end
 
   test "lng should be present" do
-    @spot.lng = ""
+    @spot.lng = nil
     assert_not @spot.valid?
   end
 
