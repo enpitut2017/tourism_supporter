@@ -1,24 +1,30 @@
-# README
+## enPiT観光局 「いいねサポーター」
+## エレベーターピッチ
+「いい写真を撮りたい」という課題を解決したい
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+「旅行者向け」の
 
-Things you may want to cover:
+「SNSでいいねがもらえる写真が撮れる」ことを実現する
 
-* Ruby version
+「いいねサポーター」です。
 
-* System dependencies
+これは「撮影ポイント等、撮影の情報を提供（共有）でき
 
-* Configuration
+「ネット記事」とは違って
 
-* Database creation
+「撮影する際のワンポイントアドバイスを提示する機能」が備わっています。
 
-* Database initialization
+## URL
+* サービスのURL
+https://tourism-supporter.herokuapp.com
+* CIのURL
+https://circleci.com/gh/enpitut2017/tourism_supporter
+* タスクカンバンのURL
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## メンバー
+* [Mori-Atsushi](https://github.com/Mori-Atsushi)
+* [Ryota Shimomura](https://github.com/RyotaShimomura)
+* [ten1010](https://github.com/ten1010)
+* [tomohiro-matsushita](https://github.com/tomohiro-matsushita)
+* [Muramoto Naoki](https://github.com/muramon)
+* [Shizuma5](https://github.com/Shizuma5)
