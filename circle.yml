@@ -1,5 +1,6 @@
 database:
-  override:
+  pre:
     - mv config/database.yml.ci config/database.yml
-    - rake db:create db:schema:load RAILS_ENV=test
-    - rake db:migrate:reset RAILS_ENV=test
+  override:
+    - bundle exec rake db:create db:schema:load RAILS_ENV=test
+    - bundle exec rake db:migrate RAILS_ENV=test
