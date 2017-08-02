@@ -1,0 +1,11 @@
+class CreateAdvices < ActiveRecord::Migration[5.1]
+  def change
+    create_table :advices do |t|
+      t.integer :spot_id
+      t.string :pictureURL
+      t.text :comment
+
+      t.timestamps
+    end
+  end
+end
