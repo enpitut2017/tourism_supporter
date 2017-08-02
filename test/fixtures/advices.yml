@@ -5,3 +5,4 @@ one:
   pictureURL: MyString
   comment: MyText
   created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
