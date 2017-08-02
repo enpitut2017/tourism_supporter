@@ -5,7 +5,3 @@ one:
   lat: 1
   lng: 1
 
-two:
-  placeName: MyString
-  lat: 1
-  lng: 1

@@ -4,8 +4,3 @@ one:
   spot_id: 1
   pictureURL: MyString
   comment: MyText
-
-two:
-  spot_id: 1
-  pictureURL: MyString
-  comment: MyText
