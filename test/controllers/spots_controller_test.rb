@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class SpotsControllerTest < ActionDispatch::IntegrationTest
+  def setup
+    @spot = spots(:one)
+  end
+
   test "should get show" do
-    get spots_show_url
+    get spot_path(@spot)
     assert_response :success
   end
 
