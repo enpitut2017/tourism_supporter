@@ -1,5 +1,15 @@
+<% provide(:title, 'advice') %>
+
 <%= form_for(@advice) do |f| %>
-    <%= f.label :advice %>
-    <%= f.text_field :advice %>
-    <%= f.submit "Transmit advice" %>
+<%= f.label :advice %>
+<%= f.text_field :comment %>
+
+<%= f.label :URL %>
+<%= f.text_field :pictureURL %>
+
+<%= f.label :ID %>
+<%= f.text_field :spot_id %>
+
+
+<%= f.submit "Transmit advice" %>
 <% end %>
