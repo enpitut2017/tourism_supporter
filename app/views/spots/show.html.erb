@@ -5,5 +5,12 @@
 <%= image_tag('fountain.png') %>
 
 <h3>ワンポイントアドバイス</h3>
-丘の上から取るのがポイント
+<ul>
+  <% @advices.each do |advice| %>
+    <li>
+      <%= advice.comment %>
+      Posted <%= time_ago_in_words(advice.created_at) %> ago. 
+    </li>
+  <% end %>
+</ul>
 </p>
