@@ -2,14 +2,14 @@
 <h1><%= @spot.placeName %></h1>
 
 <p>
-<%= image_tag('fountain.png') %>
+  <%= image_tag(@spot.picture) %>
 
-<h3>ワンポイントアドバイス</h3>
-<ul>
-  <% @advices.each do |advice| %>
-    <li>
-      <%= advice.comment %>
-    </li>
-  <% end %>
-</ul>
+  <h3>ワンポイントアドバイス</h3>
+  <ul>
+    <% @advices.each do |advice| %>
+      <li>
+        <%= advice.comment %>
+      </li>
+    <% end %>
+  </ul>
 </p>

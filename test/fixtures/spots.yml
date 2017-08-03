@@ -4,8 +4,10 @@ one:
   placeName: MyString
   lat: 1
   lng: 1
+  picture: fountain.png
 
 two:
-  placeName: MyString
+  placeName: MyString2
   lat: 1
   lng: 1
+  picture: fountain.png
