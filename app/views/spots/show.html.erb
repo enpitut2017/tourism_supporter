@@ -9,7 +9,9 @@
   <% @advices.each do |advice| %>
     <li>
       <%= advice.comment %>
+
     </li>
   <% end %>
+  <%= link_to "submit", new_advice_path(spot_id: @spot.id) %>
 </ul>
 </p>

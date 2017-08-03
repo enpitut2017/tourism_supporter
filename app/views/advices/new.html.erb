@@ -7,9 +7,7 @@
 <%= f.label :URL %>
 <%= f.text_field :pictureURL %>
 
-<%= f.label :ID %>
-<%= f.text_field :spot_id %>
-
+<%= f.hidden_field :spot_id, value: @spot_id %>
 
 <%= f.submit "Transmit advice" %>
 <% end %>

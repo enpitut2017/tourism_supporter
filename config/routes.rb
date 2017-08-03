@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   resources :advices
   root 'spots#index'
 
+  resources :spots do
+    resources :advices
+  end
+
+  #spots/1/advices/new
+
 end
