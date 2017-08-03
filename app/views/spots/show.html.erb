@@ -9,7 +9,6 @@
   <% @advices.each do |advice| %>
     <li>
       <%= advice.comment %>
-       <%= time_ago_in_words(advice.created_at) %> 前の投稿 
     </li>
   <% end %>
 </ul>
