@@ -1,8 +1,15 @@
-<h1>３学の噴水</h1>
+<% provide(:title, @spot.placeName) %>
+<h1><%= @spot.placeName %></h1>
 
 <p>
 <%= image_tag('fountain.png') %>
 
 <h3>ワンポイントアドバイス</h3>
-丘の上から取るのがポイント
+<ul>
+  <% @advices.each do |advice| %>
+    <li>
+      <%= advice.comment %>
+    </li>
+  <% end %>
+</ul>
 </p>

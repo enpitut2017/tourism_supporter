@@ -9,3 +9,7 @@ Spot.create!(placeName:  "Mt.tsukuba",
 Spot.create!(placeName:  "Ushikudaibutsu",
              lat: 37.9,
              lng: 139.8)
+
+Advice.create!(spot_id: 1,
+              pictureURL: "#",
+              comment: "aaaaa")
