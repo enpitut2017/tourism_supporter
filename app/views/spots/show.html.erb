@@ -8,7 +8,6 @@
 <ul>
   <% @advices.each do |advice| %>
     <li>
-      <%= link_to image_tag("fountain", :size => "75x75", :alt => "アイコン"), "#" %>
       <%= advice.comment %>
     </li>
   <% end %>
