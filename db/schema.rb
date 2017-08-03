@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170803062651) do
     t.integer "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "picture"
+    t.string "picture", null: false
   end
 
 end
