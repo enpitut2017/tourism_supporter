@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SpotTest < ActiveSupport::TestCase
   def setup
-    @spot = Spot.new(placeName: "Example Spot", lat: 0, lng: 0)
+    @spot = Spot.new(placeName: "Example Spot", lat: 0, lng: 0, picture: "uuuu")
   end
 
   test "should be valid" do
@@ -21,6 +21,11 @@ class SpotTest < ActiveSupport::TestCase
 
   test "lng should be present" do
     @spot.lng = nil
+    assert_not @spot.valid?
+  end
+
+   test "picture should be present" do
+    @spot.picture = ""
     assert_not @spot.valid?
   end
 
