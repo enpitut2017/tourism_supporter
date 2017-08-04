@@ -14,7 +14,7 @@ class AdvicesController < ApplicationController
   end
 
   def advice_params
-    params.require(:advice).permit(:spot_id, :pictureURL, :comment)
+    params.require(:advice).permit(:spot_id, :picture, :comment)
   end
 
 end

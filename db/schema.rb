@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804010505) do
+ActiveRecord::Schema.define(version: 20170804041932) do
 
   create_table "advices", force: :cascade do |t|
     t.integer "spot_id"
-    t.string "pictureURL"
+    t.string "picture"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
