@@ -1,0 +1,17 @@
+<% provide(:title, 'create Spot') %>
+<h1>create Spot</h1>
+
+<%= form_for(@spot) do |f| %>
+    <%= f.label :placeName %>
+    <%= f.text_field :placeName %>
+    
+    <%= f.label :lat %>
+    <%= f.number_field :lat %>
+    
+    <%= f.label :lng %>
+    <%= f.number_field :lng %>
+    
+    <%= f.submit "Create new spot" %>
+
+    <%= f.file_field :picture %>
+<% end %>

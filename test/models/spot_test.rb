@@ -2,7 +2,11 @@ require 'test_helper'
 
 class SpotTest < ActiveSupport::TestCase
   def setup
-    @spot = Spot.new(placeName: "Example Spot", lat: 0, lng: 0, picture: "uuuu")
+    picture = fixture_file_upload("test/fixtures/tukuba1.jpg", 'image/jpg')
+    @spot = Spot.new(placeName: "Example Spot", lat: 0, lng: 0, picture: picture)
+    #@spot = Spot.new(placeName: "Example Spot", lat: 0, lng: 0, picture: "uuuuu")
+    #@spot = spots(:one)
+    p @spot
   end
 
   test "should be valid" do
