@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'spots/show'
-  get 'spots/index'
-  resources :spots
   root 'spots#index'
 
+  resources :spots do
+    resources :advices
+  end
 end
