@@ -4,10 +4,4 @@ one:
   placeName: MyString
   lat: 1
   lng: 1
-  picture: 'public/uploads/spot/picture/980190963'
-
-two:
-  placeName: MyString2
-  lat: 1
-  lng: 1
-  picture: fountain.png
+  picture: test
