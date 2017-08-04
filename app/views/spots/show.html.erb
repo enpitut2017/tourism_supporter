@@ -9,6 +9,7 @@
     <% @advices.each do |advice| %>
       <li>
         <%= advice.comment %>
+        <%= image_tag advice.pictureURL.url if advice.pictureURL? %>
       </li>
     <% end %>
   </ul>
