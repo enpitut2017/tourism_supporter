@@ -4,6 +4,7 @@
 <p>
   <%= image_tag(@spot.picture) %>
 
+  <%= link_to "googlemap", new_spot_map_path(spot_id: @spot.id) %>
   <h3>ワンポイントアドバイス</h3>
   <ul>
     <% @advices.each do |advice| %>
