@@ -13,8 +13,11 @@ class AdvicesController < ApplicationController
     redirect_to controller: 'spots', action: 'show', id: @advice.spot_id
   end
 
+  def show
+    @advice = Advice.find(params[:id])
+  end
+
   def advice_params
     params.require(:advice).permit(:spot_id, :picture, :comment)
   end
-
 end
