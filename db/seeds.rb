@@ -1,17 +1,17 @@
 Spot.create!(placeName:  "筑波大学嘉納治五郎像",
              lat: 36.105469,
              lng: 140.102282,
-             picture: '/sample1.jpg')
+             picture: open("#{Rails.root}/public/sample1.jpg"))
 
 Spot.create!(placeName:  "附属病院けやき棟から",
              lat: 36.092247,
              lng: 140.102209,
-             picture: '/sampletsukuba.jpg')
+             picture: open("#{Rails.root}/public/sampletsukuba.jpg"))
 
 Spot.create!(placeName:  "一の矢エリアの並木道",
              lat: 36.119330,
              lng: 140.099204,
-             picture: '/sampletsukuba2.jpg')
+             picture: open("#{Rails.root}/public/sampletsukuba2.jpg"))
 
 Advice.create!(spot_id: 1,
                picture: open("#{Rails.root}/public/sample1.jpg"),

@@ -3,7 +3,7 @@ require 'test_helper'
 class SpotCreateTest < ActionDispatch::IntegrationTest
   test "invalid spot information" do
     get new_spot_path
-    picture = fixture_file_upload("#{Rails.root}/test/fixtures/tukuba1.jpg", 'image/jpg')
+    picture = fixture_file_upload("#{Rails.root}/test/fixtures/test.jpg", 'image/jpg')
     assert_no_difference 'Spot.count' do
       post spots_path, params: { spot: { placeName:  "",
                                          lat: 0,
@@ -15,7 +15,7 @@ class SpotCreateTest < ActionDispatch::IntegrationTest
 
   test "valid spot information" do
     get new_spot_path
-    picture = fixture_file_upload("#{Rails.root}/test/fixtures/tukuba1.jpg", 'image/jpg')
+    picture = fixture_file_upload("#{Rails.root}/test/fixtures/test.jpg", 'image/jpg')
     p picture
     assert_difference 'Spot.count', 1 do
       post spots_path, params:  { spot: { placeName:  "a",
