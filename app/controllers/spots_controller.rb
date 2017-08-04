@@ -1,4 +1,3 @@
-# coding: utf-8
 class SpotsController < ApplicationController
   def index
     @spots = Spot.all
@@ -22,10 +21,10 @@ class SpotsController < ApplicationController
       render 'new'
     end
   end
-  
+
 private
   def spot_params
     params.require(:spot).permit(:placeName, :lat, :lng, :picture)
   end
-  
+
 end
