@@ -3,7 +3,9 @@ require 'test_helper'
 class AdviceTest < ActiveSupport::TestCase
   def setup
     @spot = spots(:one)
-    @advice = @spot.advices.build(pictureURL: "Example Picture", comment: "Example Comment")
+    @advice = @spot.advices.build(
+      picture: open('test/fixtures/test.jpg'),
+      comment: "Example Comment")
   end
 
   test "should be valid" do

@@ -14,17 +14,17 @@ Spot.create!(placeName:  "一の矢エリアの並木道",
              picture: '/sampletsukuba2.jpg')
 
 Advice.create!(spot_id: 1,
-               pictureURL: '/sample1.jpg',
+               picture: open("#{Rails.root}/public/sample1.jpg"),
                comment: "斜め下から撮りましょう")
 
 Advice.create!(spot_id: 2,
-               pictureURL: '/sampletsukuba.jpg',
+               picture: open("#{Rails.root}/public/sampletsukuba.jpg"),
                comment: "黄昏時の大学と筑波山。夕暮れ時がおすすめです。")
 
 Advice.create!(spot_id: 3,
-               pictureURL: '/sampletsukuba2.jpg',
+               picture: open("#{Rails.root}/public/sampletsukuba2.jpg"),
                comment: "夏、よく晴れた日に撮りましょう！")
 
 Advice.create!(spot_id: 3,
-               pictureURL: '/sampletsukuba2.jpg',
+               picture: open("#{Rails.root}/public/sampletsukuba2.jpg"),
                comment: "緑が鮮やかになるように彩度を調整しましょう。")

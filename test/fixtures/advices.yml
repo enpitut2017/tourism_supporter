@@ -2,10 +2,10 @@
 
 one:
   spot: one
-  pictureURL: MyString
+  picture: MyString
   comment: MyText
 
 two:
   spot: two
-  pictureURL: MyString
+  picture: MyString
   comment: MyText
