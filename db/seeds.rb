@@ -24,3 +24,7 @@ Advice.create!(spot_id: 2,
 Advice.create!(spot_id: 3,
                pictureURL: '/sampletsukuba2.jpg',
                comment: "夏、よく晴れた日に撮りましょう！")
+
+Advice.create!(spot_id: 3,
+               pictureURL: '/sampletsukuba2.jpg',
+               comment: "緑が鮮やかになるように彩度を調整しましょう。")
