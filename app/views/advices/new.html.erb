@@ -1,0 +1,11 @@
+<% provide(:title, 'advice') %>
+
+<%= form_for([@spot, @advice]) do |f| %>
+<%= f.label :advice %>
+<%= f.text_field :comment %>
+
+<%= f.label :URL %>
+<%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
+
+<%= f.submit "Transmit advice" %>
+<% end %>

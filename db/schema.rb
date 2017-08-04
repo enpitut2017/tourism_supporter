@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170803062651) do
+ActiveRecord::Schema.define(version: 20170804041932) do
 
   create_table "advices", force: :cascade do |t|
     t.integer "spot_id"
-    t.string "pictureURL"
+    t.string "picture"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20170803062651) do
 
   create_table "spots", force: :cascade do |t|
     t.string "placeName"
-    t.integer "lat"
-    t.integer "lng"
+    t.float "lat"
+    t.float "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture", null: false
