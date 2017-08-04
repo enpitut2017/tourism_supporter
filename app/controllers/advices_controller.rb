@@ -1,12 +1,13 @@
 class AdvicesController < ApplicationController
 
   def new
-    @advice = Advice.new
-    @spot_id = params[:spot_id]
+    @spot = Spot.find(params[:spot_id])
+    @advice = @spot.advices.build
   end
 
   def create
-    @advice = Advice.new(advice_params)
+    @spot = Spot.find(params[:spot_id])
+    @advice = @spot.advices.build(advice_params)
     @advice.save
 
     redirect_to controller: 'spots', action: 'show', id: @advice.spot_id

@@ -1,13 +1,11 @@
 <% provide(:title, 'advice') %>
 
-<%= form_for(@advice) do |f| %>
+<%= form_for([@spot, @advice]) do |f| %>
 <%= f.label :advice %>
 <%= f.text_field :comment %>
 
 <%= f.label :URL %>
 <%= f.text_field :pictureURL %>
-
-<%= f.hidden_field :spot_id, value: @spot_id %>
 
 <%= f.submit "Transmit advice" %>
 <% end %>
