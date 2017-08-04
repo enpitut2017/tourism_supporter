@@ -4,4 +4,5 @@ class Spot < ApplicationRecord
             uniqueness: true
   validates :lat, presence: true
   validates :lng, presence: true
+  validates :picture, presence: true
 end
