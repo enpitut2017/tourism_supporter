@@ -30,9 +30,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-gem 'carrierwave',             '1.1.0' 
-gem 'mini_magick',             '4.7.0' 
+gem 'carrierwave',             '1.1.0'
+gem 'mini_magick',             '4.7.0'
 
 group :production do
   gem 'pg', '0.20.0'
