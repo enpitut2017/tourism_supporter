@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'spots#index'
 
   resources :spots do
-    resources :advices
+    resources :advices, shallow: true
   end
 end

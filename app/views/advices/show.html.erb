@@ -1,0 +1,5 @@
+<% provide(:title, 'advice') %>
+
+<p><%= image_tag @advice.picture.url if @advice.picture? %></p>
+<%= @advice.comment %>
+
