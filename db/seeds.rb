@@ -22,7 +22,7 @@ Spot.create!(placeName:  "一の矢エリアの並木道",
 
 Advice.create!(spot_id: 1,
                picture: open("#{Rails.root}/public/sample1.jpg"),
-               comment: "斜め下から撮りましょう")
+               comment: "斜め下から撮りましょう。天候が良いと銅像が映えます。")
 
 Advice.create!(spot_id: 2,
                picture: open("#{Rails.root}/public/sampletsukuba.jpg"),
@@ -30,8 +30,8 @@ Advice.create!(spot_id: 2,
 
 Advice.create!(spot_id: 3,
                picture: open("#{Rails.root}/public/sampletsukuba2.jpg"),
-               comment: "夏、よく晴れた日に撮りましょう！")
+               comment: "夏、よく晴れた日に撮りましょう！緑が鮮やかになるように彩度を調整すると良いです。")
 
 Advice.create!(spot_id: 3,
-               picture: open("#{Rails.root}/public/sampletsukuba2.jpg"),
-               comment: "緑が鮮やかになるように彩度を調整しましょう。")
+               picture: open("#{Rails.root}/public/itf.jpg"),
+               comment: "Imagine the Future. の看板と一緒に取ると、筑波大らしさが増します。")
