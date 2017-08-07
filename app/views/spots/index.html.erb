@@ -1,11 +1,15 @@
-<h1>All spots</h1>
+<header>
+  <h1>いいねサポーター</h1>
+</header>
 
 <ul class="spots">
   <% @spots.each do |spot| %>
-    <li>
-    <%= link_to spot.placeName, spot %>
-    </li>
+    <%= link_to spot do %>
+      <li style="background-image: url(<%== asset_url(spot.picture) %>);">
+        <h2><%= spot.placeName %></h2>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 
-<%= link_to "新規スポット作成", new_spot_url %>
+<%= link_to "＋", new_spot_url, :class => 'new_spot_button' %>
