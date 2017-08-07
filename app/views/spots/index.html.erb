@@ -2,13 +2,15 @@
   <h1>いいねサポーター</h1>
 </header>
 <%= form_tag(spots_path, method: "get") do %>
-<%= label_tag :search, "キーワード" %>
-<%= text_field_tag :search %>
-<%= submit_tag "検索" %>
+  <div class="search_box" ><%= text_field_tag :search, nil, :placeholder => 'キーワード検索' %></div>
 <% end %>
 
 <% if @spots.empty? %>
-  <p> 条件に一致する検索結果はありません </p>
+  <session class="search_result">
+    <div class="content">
+      <p> 条件に一致する検索結果はありません。 </p>
+    </div>
+  </session>
 <% end %>
 <ul class="spots">
   <% @spots.each do |spot| %>
