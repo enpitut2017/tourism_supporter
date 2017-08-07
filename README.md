@@ -21,6 +21,10 @@ https://tourism-supporter.herokuapp.com
 https://circleci.com/gh/enpitut2017/tourism_supporter
 * タスクカンバンのURL
 
+## 必要なライブラリ
+* exiftool
+brew install exiftool
+
 ## メンバー
 * [Mori-Atsushi](https://github.com/Mori-Atsushi)
 * [Ryota Shimomura](https://github.com/RyotaShimomura)
