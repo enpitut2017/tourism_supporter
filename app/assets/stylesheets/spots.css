@@ -28,7 +28,6 @@ ul.spots li h2 {
   bottom: 0;
   left: 0;
   right: 0;
-  font-weight: normal;
 }
 
 .new_spot_button {
@@ -44,7 +43,63 @@ ul.spots li h2 {
   align-items: center;
   justify-content: center;
   font-size: 30px;
-  text-decoration: none;
   vertical-align: middle;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+session .header_img {
+  width: 100%;
+}
+
+session .content {
+  margin: 10px 3%;
+}
+
+session .button_and_head {
+  display: flex;
+  align-items: center;
+}
+
+session h2 {
+  font-size: 20px;
+  margin: 10px 0;
+  border-left: solid 5px #3477CC;
+  padding-left: 5px;
+  box-sizing: border-box;
+  margin-right: auto;
+}
+
+session .button {
+  text-align: center;
+  background-color: #3477CC;
+  color: #EEEEEE;
+  padding: 7px 0;
+  border-radius: 5px;
+  width: 100px;
+  font-size: 16px;
+}
+
+session p {
+  margin: 10px 0 20px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+session.spot_detail .advice_item a {
+  display: inline-flex;
+  align-items: flex-start;
+  padding: 10px 0;
+}
+
+session.spot_detail .advice_item:not(:last-child) {
+  border-bottom: solid 1px #CCCCCC;
+}
+
+session.spot_detail .advice_item p {
+  margin-right: auto;
+  color: #333333;
+}
+
+session.spot_detail .advice_item img {
+  width: 30%;
 }
