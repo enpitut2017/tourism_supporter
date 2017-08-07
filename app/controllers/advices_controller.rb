@@ -9,8 +9,6 @@ class AdvicesController < ApplicationController
   def create
     @spot = Spot.find(params[:spot_id])
     @advice = @spot.advices.build(advice_params)
-    #@advice.lat, @advice.lng = get_place params[:picture]
-#    @advice.save
     @advice = insert_place @advice
     @advice.save
 
