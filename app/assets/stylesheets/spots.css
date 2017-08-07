@@ -47,20 +47,20 @@ ul.spots li h2 {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-session.spot_detail .header_img {
+session .header_img {
   width: 100%;
 }
 
-session.spot_detail .content {
+session .content {
   margin: 10px 3%;
 }
 
-session.spot_detail .button_and_head {
+session .button_and_head {
   display: flex;
   align-items: center;
 }
 
-session.spot_detail h2 {
+session h2 {
   font-size: 20px;
   margin: 10px 0;
   border-left: solid 5px #3477CC;
@@ -69,7 +69,7 @@ session.spot_detail h2 {
   margin-right: auto;
 }
 
-session.spot_detail .button {
+session .button {
   text-align: center;
   background-color: #3477CC;
   color: #EEEEEE;
@@ -79,7 +79,7 @@ session.spot_detail .button {
   font-size: 16px;
 }
 
-session.spot_detail p {
+session p {
   margin: 10px 0 20px;
   font-size: 14px;
   line-height: 24px;
