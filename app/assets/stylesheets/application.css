@@ -21,6 +21,7 @@
 
 html, body {
   background-color: #EEEEEE;
+  overflow-x: hidden;
 }
 
 header {
