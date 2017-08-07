@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170804062510) do
-=======
 ActiveRecord::Schema.define(version: 20170807014635) do
->>>>>>> a7b01894b8e3eb6bdb615094aef9628929176d39
 
   create_table "advices", force: :cascade do |t|
     t.integer "spot_id"

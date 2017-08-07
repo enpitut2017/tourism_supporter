@@ -32,12 +32,10 @@ gem 'mini_exiftool'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-<<<<<<< HEAD
-
-=======
->>>>>>> a7b01894b8e3eb6bdb615094aef9628929176d39
 gem 'carrierwave',             '1.1.0'
 gem 'mini_magick',             '4.7.0'
+
+gem 'exifr'
 
 group :production do
   gem 'pg', '0.20.0'
