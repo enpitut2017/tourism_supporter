@@ -38,9 +38,10 @@ html, body {
 
 input {
   display: block;
-  padding: 10px 2%;
+  padding: 12px 2%;
   width: 96%;
   margin: 10px 0;
+  border: 0px;
 }
 
 input[type="submit"] {

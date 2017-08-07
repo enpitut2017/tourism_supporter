@@ -107,3 +107,8 @@ session.new_spot .item {
 session.new_spot input[type="submit"]{
   margin: 10px auto 20px;
 }
+
+.search_box {
+  padding: 0px 3%;
+
+}
