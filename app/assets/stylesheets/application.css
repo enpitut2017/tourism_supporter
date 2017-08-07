@@ -19,6 +19,10 @@
   padding: 0;
 }
 
+ul {
+  list-style: none;
+}
+
 h1, h2 {
   font-weight: normal;
 }
@@ -32,6 +36,27 @@ html, body {
   overflow-x: hidden;
 }
 
+input {
+  display: block;
+  padding: 12px 2%;
+  width: 96%;
+  margin: 10px 0;
+  border: 0px;
+}
+
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+textarea {
+  padding: 10px 2%;
+  line-height: 14px;
+  width: 96%;
+  height: 100px;
+}
+
 header {
   background-color: #3477CC;
   color: #EEEEEE;
@@ -42,3 +67,5 @@ header {
 header h1 {
   font-size: 24px;
 }
+
+

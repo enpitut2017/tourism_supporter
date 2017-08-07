@@ -1,10 +1,20 @@
 <% provide(:title, 'advice') %>
+<header>
+  <h1>アドバイス作成</h1>
+</header>
 
-<%= form_for([@spot, @advice]) do |f| %>
-<%= f.label :advice %>
-<%= f.text_field :comment %>
-
-<%= f.file_field :picture, accept: 'image/jpeg' %>
-
-<%= f.submit "Transmit advice" %>
-<% end %>
+<session class="new_spot">
+  <div class="content">
+    <%= form_for([@spot, @advice]) do |f| %>
+      <div class="item">
+        <h2>アドバイス</h2>
+        <%= f.text_area :comment, :placeholder => 'コメント' %>
+      </div>
+      <div class="item">
+        <h2>画像</h2>
+        <%= f.file_field :picture, accept: 'image/jpeg %>
+      </div>
+      <%= f.submit "送信", :class => 'button'  %>
+    <% end %>
+  </div>
+</session>
