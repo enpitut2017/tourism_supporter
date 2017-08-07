@@ -5,7 +5,7 @@
   <div class="search_box" ><%= text_field_tag :search, nil, :placeholder => 'キーワード検索' %></div>
 <% end %>
 
-<% if @spots.empty? %>
+<% if @spots.blank? %>
   <session class="search_result">
     <div class="content">
       <p> 条件に一致する検索結果はありません。 </p>
@@ -16,7 +16,7 @@
   <% @spots.each do |spot| %>
     <%= link_to spot do %>
       <li style="background-image: url(<%== asset_url(spot.picture) %>);">
-        <h2><%= spot.placeName %></h2>
+        <h2><%= spot.place_name %></h2>
       </li>
     <% end %>
   <% end %>

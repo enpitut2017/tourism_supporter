@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 20170807014635) do
   end
 
   create_table "spots", force: :cascade do |t|
-    t.string "placeName"
+    t.string "place_name"
     t.float "lat"
     t.float "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture", null: false
-    t.text "detailComment"
+    t.text "detail_comment"
   end
 
 end
