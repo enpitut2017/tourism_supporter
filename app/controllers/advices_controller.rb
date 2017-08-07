@@ -11,9 +11,6 @@ class AdvicesController < ApplicationController
     @advice = @spot.advices.build(advice_params)
     @advice = insert_place @advice
     @advice.save
-
-
-
     redirect_to controller: 'spots', action: 'show', id: @advice.spot_id
   end
 
