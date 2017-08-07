@@ -7,6 +7,9 @@
 <%= submit_tag "検索" %>
 <% end %>
 
+<% if @spots.empty? %>
+  <p> 条件に一致する検索結果はありません </p>
+<% end %>
 <ul class="spots">
   <% @spots.each do |spot| %>
     <%= link_to spot do %>
