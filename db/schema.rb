@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20170807014635) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "lat"
+    t.float "lng"
     t.index ["spot_id"], name: "index_advices_on_spot_id"
   end
 
