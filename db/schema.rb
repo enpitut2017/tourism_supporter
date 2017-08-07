@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804041932) do
+ActiveRecord::Schema.define(version: 20170804062510) do
 
   create_table "advices", force: :cascade do |t|
     t.integer "spot_id"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20170804041932) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "lat"
+    t.float "lng"
     t.index ["spot_id"], name: "index_advices_on_spot_id"
   end
 
