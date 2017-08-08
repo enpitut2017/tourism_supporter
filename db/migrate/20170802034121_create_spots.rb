@@ -1,7 +1,7 @@
 class CreateSpots < ActiveRecord::Migration[5.1]
   def change
     create_table :spots do |t|
-      t.string :placeName
+      t.string :place_name
       t.integer :lat
       t.integer :lng
 

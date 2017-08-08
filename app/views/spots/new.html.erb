@@ -8,7 +8,7 @@
     <%= form_for(@spot) do |f| %>
       <div class="item">
         <h2>スポット名</h2>
-        <%= f.text_field :placeName, :placeholder => 'スポット名' %>
+        <%= f.text_field :place_name, :placeholder => 'スポット名' %>
       </div>
       <div class="item">
         <h2>緯度・経度</h2>
@@ -21,7 +21,7 @@
       </div>
       <div class="item">
         <h2>コメント</h2>
-        <%= f.text_area :detailComment, :placeholder => 'コメント' %>
+        <%= f.text_area :detail_comment, :placeholder => 'コメント' %>
       <div>
       <%= f.submit "送信", :class => 'button' %>
     <% end %>
