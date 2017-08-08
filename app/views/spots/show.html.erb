@@ -1,8 +1,5 @@
 <% provide(:title, @spot.place_name) %>
-
-<header>
-  <h1><%= @spot.place_name %></h1>
-</header>
+<% provide :header_title, @spot.place_name %>
 
 <session class="spot_detail">
   <%= image_tag @spot.picture, :class => 'header_img' %>
