@@ -1,8 +1,5 @@
 <% provide(:title, 'advice') %>
-
-<header>
-  <h1><%= @advice.spot.place_name %></h1>
-</header>
+<% provide :header_title, @advice.spot.place_name %>
 
 <session class="advice_detail">
   <%= image_tag @advice.picture.url, :class => 'header_img' if @advice.picture? %>

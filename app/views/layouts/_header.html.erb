@@ -1,0 +1,19 @@
+<header>
+  <h1><%= yield :header_title %></h1>
+  <nav id="nav">
+    <button id="menu-button" class="menu-button"><span class="menu-button-icon"></span></button>
+    <ul>
+      <li><%= link_to 'Top', root_url %></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="margin"></div>
+
+<script type="text/javascript">
+$(function(){
+  $('#menu-button').on('click', function() {
+    $('#nav').toggleClass('open');
+  });
+})
+</script>
