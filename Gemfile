@@ -37,6 +37,9 @@ gem 'fog',                     '1.40.0'
 
 gem 'exifr'
 
+# jquery
+gem "jquery-rails"
+
 group :production do
   gem 'pg', '0.20.0'
 end
