@@ -91,9 +91,18 @@ session.spot_detail .advice_item:not(:last-child) {
   border-bottom: solid 1px #CCCCCC;
 }
 
-session.spot_detail .advice_item p {
+session.spot_detail .advice_item div {
   margin-right: auto;
+}
+
+session.spot_detail .advice_item time {
+  font-size: 12px;
+  color: #666666;
+}
+
+session.spot_detail .advice_item p {
   color: #333333;
+  margin-top: 0;
 }
 
 session.spot_detail .advice_item img {
