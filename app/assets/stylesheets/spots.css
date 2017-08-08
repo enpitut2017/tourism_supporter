@@ -48,7 +48,7 @@ session .header_img {
 }
 
 session .content {
-  margin: 10px 3%;
+  margin: 10px 3% 30px;
 }
 
 session .button_and_head {
@@ -81,6 +81,11 @@ session p {
   line-height: 24px;
 }
 
+session  time {
+  font-size: 12px;
+  color: #666666;
+}
+
 session.spot_detail .advice_item a {
   display: inline-flex;
   align-items: flex-start;
@@ -91,9 +96,13 @@ session.spot_detail .advice_item:not(:last-child) {
   border-bottom: solid 1px #CCCCCC;
 }
 
-session.spot_detail .advice_item p {
+session.spot_detail .advice_item div {
   margin-right: auto;
+}
+
+session.spot_detail .advice_item p {
   color: #333333;
+  margin-top: 0;
 }
 
 session.spot_detail .advice_item img {
