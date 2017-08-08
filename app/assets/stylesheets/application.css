@@ -34,6 +34,7 @@ a {
 html, body {
   background-color: #EEEEEE;
   overflow-x: hidden;
+  font-family: "Helvetica Neue", 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',"メイリオ", sans-serif;;
 }
 
 input {
