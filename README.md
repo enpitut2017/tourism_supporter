@@ -19,7 +19,8 @@
 https://tourism-supporter.herokuapp.com
 * CIのURL
 https://circleci.com/gh/enpitut2017/tourism_supporter
-* タスクカンバンのURL
+* プロダクトバックログのURL
+https://files.slack.com/files-tmb/T4W9TNQQG-F7GJ2N345-f4eb11f8f9/dsc_0176_1024.jpg
 
 ## メンバー
 * [Mori-Atsushi](https://github.com/Mori-Atsushi)
