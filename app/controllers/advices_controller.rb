@@ -9,10 +9,12 @@ class AdvicesController < ApplicationController
   def create
     @spot = Spot.find(params[:spot_id])
     @advice = @spot.advices.build(advice_params)
-    @advice = insert_place @advice
-    @advice.save
-
-    redirect_to controller: 'spots', action: 'show', id: @advice.spot_id
+    @advice = insert_place @advice if params[:picture] != nil
+    if @advice.save
+      redirect_to controller: 'spots', action: 'show', id: @advice.spot_id
+    else
+      render 'new'
+    end
   end
 
   def show
