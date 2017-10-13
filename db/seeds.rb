@@ -37,5 +37,6 @@ Advice.create!(spot_id: 3,
                comment: "Imagine the Future. の看板と一緒に取ると、筑波大らしさが増します。")
 
 User.create!(name: "enPiT観光局",
-             password: "password"
+             password: "password",
+             email: "example@gmail.com"
 )
