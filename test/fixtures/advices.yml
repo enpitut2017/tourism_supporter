@@ -2,10 +2,5 @@
 
 one:
   spot: one
-  picture: MyString
-  comment: MyText
-
-two:
-  spot: two
-  picture: MyString
+  picture: test.jpg
   comment: MyText

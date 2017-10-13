@@ -1,5 +1,14 @@
 <% provide(:title, 'advice') %>
+<% provide :header_title, @advice.spot.place_name %>
 
-<p><%= image_tag @advice.picture.url if @advice.picture? %></p>
-<%= @advice.comment %>
-
+<session class="advice_detail">
+  <%= image_tag @advice.picture.url, :class => 'header_img' if @advice.picture? %>
+  <div class="content">
+    <div class="button_and_head">
+      <h2>ワンポイントアドバイス</h2>
+      <%= link_to "地図で開く", create_url(@advice.lat,@advice.lng), :target=>["_blank"], :class => 'button' if @advice.lat != nil && @advice.lng != nil %>
+    </div>
+    <p><%= @advice.comment %></p>
+    <time><%= @advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
+  </div>
+</section>

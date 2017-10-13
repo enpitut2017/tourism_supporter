@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   def index
-    @spots = Spot.all
+    @spots = Spot.search(params[:search])
   end
 
   def show
@@ -24,7 +24,7 @@ class SpotsController < ApplicationController
 
 private
   def spot_params
-    params.require(:spot).permit(:placeName, :lat, :lng, :picture)
+    params.require(:spot).permit(:place_name, :lat, :lng, :picture, :detail_comment)
   end
 
 end

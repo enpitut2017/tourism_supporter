@@ -1,21 +1,30 @@
-<% provide(:title, @spot.placeName) %>
-<h1><%= @spot.placeName %></h1>
+<% provide(:title, @spot.place_name) %>
+<% provide :header_title, @spot.place_name %>
 
-<p>
-  <%= image_tag(@spot.picture) %>
-  <h3>詳細情報</h3>
-  <p><%= @spot.detailComment %></p>
-  <%= link_to "googlemap", create_url(@spot.lat,@spot.lng), :target=>["_blank"] %>
-  <h3>ワンポイントアドバイス</h3>
-  <ul>
-    <% @advices.each do |advice| %>
-      <%= link_to advice do %>
-        <li>
-          <%= advice.comment %>
-          <%= image_tag advice.picture.url if advice.picture? %>
+<session class="spot_detail">
+  <%= image_tag @spot.picture, :class => 'header_img' %>
+  <div class="content">
+    <div class="button_and_head">
+      <h2>詳細情報</h2>
+      <%= link_to "地図で開く", create_url(@spot.lat,@spot.lng), :target=>["_blank"], :class => 'button' %>
+    </div>
+    <p><%= @spot.detail_comment %></p>
+    <div class="button_and_head">
+      <h2>ワンポイントアドバイス</h2>
+      <%= link_to "新規作成", new_spot_advice_url(spot_id: @spot.id), :class => 'button' %>
+      </div>
+    <ul>
+      <% @advices.each do |advice| %>
+        <li class="advice_item">
+          <%= link_to advice do %>
+            <div>
+              <time><%= advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
+              <p><%= advice.comment %></p>
+            </div>
+            <%= image_tag advice.picture.url if advice.picture? %>
+          <% end %>
         </li>
       <% end %>
-    <% end %>
-  </ul>
-  <%= link_to "submit", new_spot_advice_url(spot_id: @spot.id) %>
-</p>
+    </ul>
+  </div>
+</session>

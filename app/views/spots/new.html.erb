@@ -1,17 +1,27 @@
 <% provide(:title, 'create Spot') %>
-<h1>create Spot</h1>
+<% provide :header_title, 'スポット作成' %>
 
-<%= form_for(@spot) do |f| %>
-    <%= f.label :placeName %>
-    <%= f.text_field :placeName %>
-
-    <%= f.label :lat %>
-    <%= f.number_field :lat %>
-
-    <%= f.label :lng %>
-    <%= f.number_field :lng %>
-
-    <%= f.submit "Create new spot" %>
-
-    <%= f.file_field :picture , accept: 'image/jpeg, image/gif, image/png'%>
-<% end %>
+<session class="new_spot">
+  <div class="content">
+    <%= form_for(@spot) do |f| %>
+      <div class="item">
+        <h2>スポット名</h2>
+        <%= f.text_field :place_name, :placeholder => 'スポット名' %>
+      </div>
+      <div class="item">
+        <h2>緯度・経度</h2>
+        <%= f.number_field :lat, step:0.00000001, :placeholder => '緯度' %>
+        <%= f.number_field :lng, step:0.00000001, :placeholder => '経度' %>
+      </div>
+      <div class="item">
+        <h2>画像</h2>
+        <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
+      </div>
+      <div class="item">
+        <h2>コメント</h2>
+        <%= f.text_area :detail_comment, :placeholder => 'コメント' %>
+      <div>
+      <%= f.submit "送信", :class => 'button' %>
+    <% end %>
+  </div>
+</session>

@@ -2,15 +2,15 @@ require 'test_helper'
 
 class SpotTest < ActiveSupport::TestCase
   def setup
-    @spot = Spot.new(placeName: "Example Spot", lat: 0, lng: 0, picture: open("#{Rails.root}/test/fixtures/test.jpg"))
+    @spot = Spot.new(place_name: "Example Spot", lat: 0, lng: 0, picture: open("#{Rails.root}/test/fixtures/test.jpg"))
   end
 
   test "should be valid" do
     assert @spot.valid?
   end
 
-  test "placeName should be present" do
-    @spot.placeName = ""
+  test "place_name should be present" do
+    @spot.place_name = ""
     assert_not @spot.valid?
   end
 
@@ -29,7 +29,7 @@ class SpotTest < ActiveSupport::TestCase
     assert_not @spot.valid?
   end
 
-  test "placeName should be unique" do
+  test "place_name should be unique" do
     duplicate_user = @spot.dup
     @spot.save
     assert_not duplicate_user.valid?

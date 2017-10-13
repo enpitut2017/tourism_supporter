@@ -1,12 +1,21 @@
-<header>
-  <h1>いいねサポーター</h1>
-</header>
+<% provide :header_title, 'いいねサポーター' %>
 
+<%= form_tag(spots_path, method: "get") do %>
+  <div class="search_box" ><%= text_field_tag :search,  params[:search], :placeholder => 'キーワード検索' %></div>
+<% end %>
+
+<% if @spots.blank? %>
+  <session class="search_result">
+    <div class="content">
+      <p> 条件に一致する検索結果はありません。 </p>
+    </div>
+  </session>
+<% end %>
 <ul class="spots">
   <% @spots.each do |spot| %>
     <%= link_to spot do %>
       <li style="background-image: url(<%== asset_url(spot.picture) %>);">
-        <h2><%= spot.placeName %></h2>
+        <h2><%= spot.place_name %></h2>
       </li>
     <% end %>
   <% end %>
