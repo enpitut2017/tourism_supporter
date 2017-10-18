@@ -4,6 +4,11 @@
     <button id="menu-button" class="menu-button"><span class="menu-button-icon"></span></button>
     <ul>
       <li><%= link_to 'Top', root_url %></li>
+      <% if logged_in? %>
+        <li><%= link_to 'Log out', root_url %></li>
+      <% else %>
+        <li><%= link_to 'Log in', root_url %></li>
+      <% end %>
     </ul>
   </nav>
 </header>
