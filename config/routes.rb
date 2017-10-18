@@ -8,9 +8,11 @@ Rails.application.routes.draw do
     resources :advices, shallow: true
   end
 
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+  get    '/signup',  to: 'users#new'
   resources :users
 
-  get  '/signup',  to: 'users#new'
-  
 
 end
