@@ -1,5 +1,6 @@
 class Spot < ApplicationRecord
   has_many :advices
+  belongs_to :create_user, class_name: "User"
   mount_uploader :picture, PictureUploader
   validates :place_name, presence: true,
             uniqueness: true
