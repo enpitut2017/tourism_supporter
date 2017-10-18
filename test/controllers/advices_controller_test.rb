@@ -12,4 +12,8 @@ class AdvicesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should not get new without login" do
+    get new_spot_advice_url(spot_id: @spot.id)
+    assert_redirected_to controller: :sessions, action: :new
+  end
 end
