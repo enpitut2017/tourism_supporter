@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :advices, shallow: true
   end
 
+  resources :users
+
   get  '/signup',  to: 'users#new'
+  
 
 end
