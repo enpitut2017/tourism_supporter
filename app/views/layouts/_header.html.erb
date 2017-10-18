@@ -5,9 +5,11 @@
     <ul>
       <li><%= link_to 'Top', root_url %></li>
       <% if logged_in? %>
-        <li><%= link_to 'Log out', root_url %></li>
+        <li><%= link_to "Profile", current_user %></li>
+        <li><%= link_to 'Log out', logout_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to 'Log in', root_url %></li>
+        <li><%= link_to 'Log in', login_path %></li>
+        <li><%= link_to 'Sign Up', signup_path %></li>
       <% end %>
     </ul>
   </nav>
