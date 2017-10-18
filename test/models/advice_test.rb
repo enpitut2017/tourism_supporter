@@ -2,10 +2,12 @@ require 'test_helper'
 
 class AdviceTest < ActiveSupport::TestCase
   def setup
+    @user = users(:michael)
     @spot = spots(:one)
     @advice = @spot.advices.build(
       picture: open('test/fixtures/test.jpg'),
-      comment: "Example Comment")
+      comment: "Example Comment",
+      user: @user )
   end
 
   test "should be valid" do

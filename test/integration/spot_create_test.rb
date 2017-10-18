@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class SpotCreateTest < ActionDispatch::IntegrationTest
+  def setup
+    @user = users(:michael)
+  end
+
   test "invalid spot information" do
+    log_in_as(@user)
     get new_spot_path
     picture = fixture_file_upload("#{Rails.root}/test/fixtures/test.jpg", 'image/jpg')
     assert_no_difference 'Spot.count' do
@@ -14,6 +19,7 @@ class SpotCreateTest < ActionDispatch::IntegrationTest
   end
 
   test "valid spot information" do
+    log_in_as(@user)
     get new_spot_path
     picture = fixture_file_upload("#{Rails.root}/test/fixtures/test.jpg", 'image/jpg')
     p picture
