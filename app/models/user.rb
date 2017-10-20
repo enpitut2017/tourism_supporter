@@ -9,6 +9,7 @@ class User < ApplicationRecord
                    uniqueness: { case_sensitive: false }
   has_many :advices
   has_many :spots, foreign_key: :create_user_id
+  has_many :mylists
 
   # 渡された文字列のハッシュ値を返す
   def User.digest(string)
