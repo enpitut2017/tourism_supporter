@@ -12,5 +12,6 @@
     <time><%= @advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
 
     <%= link_to "delete", @advice, method: :delete, data: { confirm: "You sure?" } %>
+    <%= link_to "Settings", edit_advice_path %>
   </div>
 </section>

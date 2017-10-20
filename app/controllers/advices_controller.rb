@@ -24,6 +24,20 @@ class AdvicesController < ApplicationController
     @advice = Advice.find(params[:id])
   end
 
+  def edit
+    @advice = Advice.find(params[:id])
+  end
+
+  def update
+    @advice = Advice.find(params[:id])
+    if @advice.update_attributes(advice_params)
+       redirect_to controller: 'advices', action: 'show', id: @advice.spot_id
+       #更新に成功した場合を扱う。
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @advice.destroy
     flash[:success] = "advide deleted"
