@@ -3,7 +3,6 @@ require 'test_helper'
 class MylistTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
-    # このコードは慣習的に正しくない
     @spot = spots(:one)
     @mylist = Mylist.new(spot_id: @spot.id, user_id: @user.id)
   end
