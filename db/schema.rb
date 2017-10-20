@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20171020063939) do
     t.float "lat"
     t.float "lng"
     t.integer "user_id"
-    t.integer "likes_count"
+    t.integer "likes_count", default: 0, null: false
     t.index ["spot_id"], name: "index_advices_on_spot_id"
     t.index ["user_id"], name: "index_advices_on_user_id"
   end
