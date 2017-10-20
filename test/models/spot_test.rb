@@ -2,7 +2,12 @@ require 'test_helper'
 
 class SpotTest < ActiveSupport::TestCase
   def setup
-    @spot = Spot.new(place_name: "Example Spot", lat: 0, lng: 0, picture: open("#{Rails.root}/test/fixtures/test.jpg"))
+    @user = users(:michael)
+    @spot = Spot.new(place_name: "Example Spot",
+                     lat: 0,
+                     lng: 0,
+                     create_user: @user,
+                     picture: open("#{Rails.root}/test/fixtures/test.jpg"))
   end
 
   test "should be valid" do

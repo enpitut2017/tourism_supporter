@@ -1,4 +1,5 @@
 class SpotsController < ApplicationController
+  before_action :logged_in_user, only: [:new, :create]
   def index
     @spots = Spot.search(params[:search])
   end
@@ -13,7 +14,7 @@ class SpotsController < ApplicationController
   end
 
   def create
-    @spot = Spot.new(spot_params)
+    @spot = current_user.spots.build(spot_params)
     if @spot.save
       flash[:success] = "スポット作成ができました"
       redirect_to @spot

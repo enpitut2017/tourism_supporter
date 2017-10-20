@@ -2,10 +2,12 @@ require 'test_helper'
 
 class AdvicesInterfaceTest < ActionDispatch::IntegrationTest
   def setup
+    @user = users(:michael)
     @spot = spots(:one)
   end
 
   test "advice interface" do
+    log_in_as(@user)
     comment = 'Test comment'
     picture = fixture_file_upload('test/fixtures/test.jpg', 'image/jpeg')
     assert_difference 'Advice.count', 1 do
