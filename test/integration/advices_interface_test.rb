@@ -18,5 +18,13 @@ class AdvicesInterfaceTest < ActionDispatch::IntegrationTest
     assert assigns(:advice).picture?
     follow_redirect!
     assert_match comment, response.body
+
+    advice = advices(:two)
+    assert_difference 'Advice.count', -1 do
+      delete advice_path(advice)
+    end
+
+    get user_path(users(:michael))
+    assert_select 'a', text: 'delete', count: 0
   end
 end

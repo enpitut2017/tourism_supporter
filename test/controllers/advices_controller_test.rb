@@ -16,4 +16,13 @@ class AdvicesControllerTest < ActionDispatch::IntegrationTest
     get new_spot_advice_url(spot_id: @spot.id)
     assert_redirected_to controller: :sessions, action: :new
   end
+
+  test "should redirect destroy for wrong advice" do
+    log_in_as(users(:ants))
+    advice = advices(:two)
+    assert_no_difference 'Advice.count' do
+      delete advice_path(advice)
+    end
+    assert_redirected_to root_url
+  end
 end
