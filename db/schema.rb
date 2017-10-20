@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020063117) do
+ActiveRecord::Schema.define(version: 20171020063939) do
 
   create_table "advices", force: :cascade do |t|
     t.integer "spot_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20171020063117) do
     t.float "lat"
     t.float "lng"
     t.integer "user_id"
+    t.integer "likes_count"
     t.index ["spot_id"], name: "index_advices_on_spot_id"
     t.index ["user_id"], name: "index_advices_on_user_id"
   end
