@@ -10,5 +10,7 @@
     </div>
     <p><%= @advice.comment %></p>
     <time><%= @advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
+
+    <%= link_to "delete", @advice, method: :delete, data: { confirm: "You sure?" } %>
   </div>
 </section>
