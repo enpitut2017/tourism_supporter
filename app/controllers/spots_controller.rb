@@ -10,8 +10,6 @@ class SpotsController < ApplicationController
     case @sort_by
     when "new"
       @advices = @spot.advices.order(:created_at)
-    when "hot"
-      @advices = @spot.advices.order(likes_count: :desc)
     else
       @advices = @spot.advices.order(likes_count: :desc)
     end
