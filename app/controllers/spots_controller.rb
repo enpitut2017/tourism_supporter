@@ -9,7 +9,7 @@ class SpotsController < ApplicationController
     @sort_by = params[:sort_by];
     case @sort_by
     when "new"
-      @advices = @spot.advices.order(:created_at)
+      @advices = @spot.advices.order(created_at: :desc)
     else
       @advices = @spot.advices.order(likes_count: :desc)
     end
