@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :spots do
     resources :advices, shallow: true do
-      resources :likes, only: [:create, :destroy]
+      resources :likes, only: [:create, :destroy], formats: 'js'
     end
   end
 

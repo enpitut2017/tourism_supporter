@@ -4,3 +4,8 @@ one:
   spot: one
   picture: test.jpg
   comment: MyText
+
+two:
+  spot: two
+  picture: test2.jpg
+  comment: MyText2
