@@ -1,7 +1,7 @@
 class AdvicesController < ApplicationController
   include AdvicesHelper
-  before_action :logged_in_user, only: [:new, :create]
-  before_action :correct_user,   only: :destroy
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :correct_user,   only: [:destroy, :edit, :update]
 
   def new
     @spot = Spot.find(params[:spot_id])
@@ -38,12 +38,12 @@ class AdvicesController < ApplicationController
   end
 
   def destroy
-    p @advice
     @advice.destroy
     flash[:success] = "advide deleted"
-    redirect_to root_url
+    redirect_to controller: 'spots', action: 'show', id: @advice.spot_id
   end
 
+private
   def advice_params
     params.require(:advice).permit(:spot_id, :picture, :comment)
   end
