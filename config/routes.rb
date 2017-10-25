@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   root 'spots#index'
 
   resources :spots do
-    resources :advices, shallow: true
+    resources :advices, shallow: true do
+      resources :likes, only: [:create, :destroy], formats: 'js'
+    end
   end
 
   get    '/login',   to: 'sessions#new'
