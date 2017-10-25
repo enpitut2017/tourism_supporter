@@ -13,5 +13,7 @@
 
     <%= link_to "delete", @advice, method: :delete, data: { confirm: "You sure?" } %>
     <%= link_to "edit", edit_advice_path %>
+    <%= render :partial => "like", locals: { advice: @advice} %>
+
   </div>
 </section>
