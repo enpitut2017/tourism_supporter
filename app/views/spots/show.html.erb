@@ -12,7 +12,9 @@
     <div class="button_and_head">
       <h2>ワンポイントアドバイス</h2>
       <%= link_to "新規作成", new_spot_advice_url(spot_id: @spot.id), :class => 'button' %>
-      </div>
+    </div>
+    <span>ソート<span>
+    <%= select_tag(:sort_by, options_for_select([["新着順", "new"], ["いいね数", "hot"]], @sort_by)) %>
     <ul>
       <% @advices.each do |advice| %>
         <li class="advice_item">
@@ -20,6 +22,7 @@
             <div>
               <time><%= advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
               <p><%= advice.comment %></p>
+              <p>Like <%= advice.likes_count %></p>
             </div>
             <%= image_tag advice.picture.url if advice.picture? %>
           <% end %>
