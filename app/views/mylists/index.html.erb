@@ -2,7 +2,7 @@
 <p><% @mylist.each {|mylist| %>
   <% mylist.spot_id%>
   <div>
-  <%=@spot.find_by(id: mylist.spot_id).place_name %>
+    <%= link_to @spots.find_by(id: mylist.spot_id).place_name, spot_path(mylist.spot_id) %>
   </div>
 <%} %>
 </p>

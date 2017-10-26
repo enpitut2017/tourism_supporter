@@ -5,6 +5,6 @@ class MylistsController < ApplicationController
   def index
     @user = current_user
     @mylist = @user.mylists
-    @spot = Spot.all
+    @spots = Spot.all
   end
 end
