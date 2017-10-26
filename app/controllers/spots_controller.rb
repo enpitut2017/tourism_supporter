@@ -6,7 +6,13 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    @advices = @spot.advices
+    @sort_by = params[:sort_by];
+    case @sort_by
+    when "new"
+      @advices = @spot.advices.order(created_at: :desc)
+    else
+      @advices = @spot.advices.order(likes_count: :desc)
+    end
   end
 
   def new
