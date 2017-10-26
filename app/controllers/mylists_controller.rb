@@ -3,8 +3,14 @@ class MylistsController < ApplicationController
   end
 
   def index
-    @user = current_user
-    @mylist = @user.mylists
-    @spots = Spot.all
+    #ユーザがログインしていなければログイン画面にリダイレクトする
+    if logged_in?
+      @user = current_user
+      @mylist = @user.mylists
+      @spots = Spot.all
+    else
+      redirect_to login_path
+    end
+
   end
 end
