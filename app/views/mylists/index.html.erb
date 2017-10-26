@@ -1,6 +1,8 @@
 
 <p><% @mylist.each {|mylist| %>
-  <%= mylist.spot_id%>
-  <%} %>
-
+  <% mylist.spot_id%>
+  <div>
+  <%=@spot.find_by(id: mylist.spot_id).place_name %>
+  </div>
+<%} %>
 </p>
