@@ -3,7 +3,9 @@
     <section>
       <h1>
         <%= @user.name %>
-        <%= link_to "マイリスト", user_mylists_path(@user.id) %>
       </h1>
+      <div>
+        <%= link_to "マイリスト", user_mylists_path(@user.id) %>
+      </div>
     </section>
   </aside>
