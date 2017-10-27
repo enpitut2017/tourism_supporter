@@ -8,12 +8,12 @@ class MylistsControllerTest < ActionDispatch::IntegrationTest
   test "should get mylist when users log in" do
     log_in_as(@user)
     follow_redirect!
-    get user_mylists_path(@user)
+    get mylists_path(@user)
     assert_response :success
   end
 
   test "invalid get mylist when users do not log in" do
-    get user_mylists_path(@user)
+    get mylists_path(@user)
     assert_redirected_to login_path
   end
 
