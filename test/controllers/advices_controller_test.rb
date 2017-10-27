@@ -46,8 +46,8 @@ class AdvicesControllerTest < ActionDispatch::IntegrationTest
   test "should redirect edit for wrong advice" do
     log_in_as(users(:ants))
     advice = advices(:one)
-    spot  = spots(:one)
-    comment =  "test"
+    spot = spots(:one)
+    comment = "test"
     user = @user
     assert_no_difference 'Advice.count' do
       patch advice_path(advice), params: { one: { spot: spot,
@@ -60,24 +60,23 @@ class AdvicesControllerTest < ActionDispatch::IntegrationTest
   test "should redirect edit for correct advice" do
     log_in_as(@user)
     advice = advices(:one)
-
-    spot  = spots(:one)
-    comment =  "test"
+    spot = spots(:one)
+    comment = "test"
     user = @user
     patch advice_path(advice), params: { advice: { spot: spot,
-                                                comment: comment,
-                                                user: user } }
+                                                   comment: comment,
+                                                   user: user } }
     assert_redirected_to controller: :advices, action: :show
     advice.reload
-    assert_equal spot,  advice.spot
-    assert_equal comment,  advice.comment
-    assert_equal user,  advice.user
+    assert_equal spot, advice.spot
+    assert_equal comment, advice.comment
+    assert_equal user, advice.user
   end
 
   test "should not edit without login" do
     advice = advices(:one)
-    spot  = spots(:one)
-    comment =  "test"
+    spot = spots(:one)
+    comment = "test"
     user = @user
     assert_no_difference 'Advice.count' do
       patch advice_path(advice), params: { one: { spot: spot,
