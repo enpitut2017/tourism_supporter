@@ -1,6 +1,4 @@
 class MylistsController < ApplicationController
-  def show
-  end
 
   def index
     #ユーザがログインしていなければログイン画面にリダイレクトする
