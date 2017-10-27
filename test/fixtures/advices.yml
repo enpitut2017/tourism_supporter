@@ -4,8 +4,10 @@ one:
   spot: one
   picture: test.jpg
   comment: MyText
+  user: michael
 
 two:
   spot: two
-  picture: test2.jpg
-  comment: MyText2
+  picture: test.jpg
+  comment: MyText
+  user: michael
