@@ -9,23 +9,20 @@ Spot.create!(place_name:  "筑波大学嘉納治五郎像",
               筑波大学には彼の偉業を讃え、銅像が設置されています。',
              lat: 36.105469,
              lng: 140.102282,
-             create_user: user,
-             picture: open("#{Rails.root}/public/sample1.jpg"))
+             create_user: user)
 
 Spot.create!(place_name:  "附属病院けやき棟から",
              detail_comment: '比較的高い棟であるため、非常に眺めがよく、写真撮影にも適しています。筑波大の隠れスポットです。',
              lat: 36.092247,
              lng: 140.102209,
-             create_user: user,
-             picture: open("#{Rails.root}/public/sampletsukuba.jpg"))
+             create_user: user)
 
 Spot.create!(place_name:  "一の矢エリアの並木道",
              detail_comment: '一の矢エリアは筑波大の自然の多さを体感することができます。
               特に永遠と続く並木道は圧巻です。大学なのか森なのか。',
              lat: 36.119330,
              lng: 140.099204,
-             create_user: user,
-             picture: open("#{Rails.root}/public/sampletsukuba2.jpg"))
+             create_user: user)
 
 Advice.create!(spot_id: 1,
                picture: open("#{Rails.root}/public/sample1.jpg"),
