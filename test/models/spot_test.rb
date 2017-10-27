@@ -6,8 +6,7 @@ class SpotTest < ActiveSupport::TestCase
     @spot = Spot.new(place_name: "Example Spot",
                      lat: 0,
                      lng: 0,
-                     create_user: @user,
-                     picture: open("#{Rails.root}/test/fixtures/test.jpg"))
+                     create_user: @user)
   end
 
   test "should be valid" do
@@ -26,11 +25,6 @@ class SpotTest < ActiveSupport::TestCase
 
   test "lng should be present" do
     @spot.lng = nil
-    assert_not @spot.valid?
-  end
-
-   test "picture should be present" do
-    @spot.picture = ""
     assert_not @spot.valid?
   end
 
