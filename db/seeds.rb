@@ -46,3 +46,6 @@ Advice.create!(spot_id: 3,
                picture: open("#{Rails.root}/public/itf.jpg"),
                user: user,
                comment: "Imagine the Future. の看板と一緒に取ると、筑波大らしさが増します。")
+
+Mylist.create!(spot_id: 1,
+               user_id: 1)

@@ -13,11 +13,7 @@
 <% end %>
 <ul class="spots">
   <% @spots.each do |spot| %>
-    <%= link_to spot do %>
-      <li style="background-image: url(<%== asset_url(spot.picture) %>);">
-        <h2><%= spot.place_name %></h2>
-      </li>
-    <% end %>
+    <%= render 'layouts/spot', spot: spot %>
   <% end %>
 </ul>
 

@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include SessionsHelper
   #ページごとの完全なタイトルを返します
     def full_title(page_title = '')
       base_title = "いいねサポーター" #暫定のプロダクト名

@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :advices
   has_many :likes
   has_many :spots, foreign_key: :create_user_id
-  has_many :mylists
+  has_many :mylists, foreign_key: :user_id
 
   # 渡された文字列のハッシュ値を返す
   def User.digest(string)
