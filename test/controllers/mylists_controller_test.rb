@@ -6,9 +6,7 @@ class MylistsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get mylist when users log in" do
-    get login_path
-    post login_path, params: { session: { email:    @user.email,
-                                          password: 'password' } }
+    log_in_as(@user)
     follow_redirect!
     get user_mylists_path(@user)
     assert_response :success
