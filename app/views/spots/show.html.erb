@@ -2,7 +2,7 @@
 <% provide :header_title, @spot.place_name %>
 
 <session class="spot_detail">
-  <%= image_tag @spot.picture, :class => 'header_img' %>
+  <%= image_tag @spot.picture, :class => 'header_img' if @spot.picture != Spot.default_picture %>
   <div class="content">
     <div class="button_and_head">
       <h2>詳細情報</h2>
