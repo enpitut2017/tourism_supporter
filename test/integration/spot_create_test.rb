@@ -12,8 +12,7 @@ class SpotCreateTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Spot.count' do
       post spots_path, params: { spot: { place_name:  "",
                                          lat: 0,
-                                         lng: 0,
-                                         picture:  picture} }
+                                         lng: 0} }
     end
     assert_template 'spots/new'
   end
@@ -26,8 +25,7 @@ class SpotCreateTest < ActionDispatch::IntegrationTest
     assert_difference 'Spot.count', 1 do
       post spots_path, params:  { spot: { place_name:  "a",
                                          lat: 0,
-                                         lng: 0,
-                                         picture: picture } }
+                                         lng: 0 } }
     end
     follow_redirect!
     assert_template 'spots/show'
