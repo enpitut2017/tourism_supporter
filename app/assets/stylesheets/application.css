@@ -51,6 +51,46 @@ input[type="submit"] {
   outline: none;
 }
 
+.selectfield select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: inherit;
+  background-color: transparent;
+  width: 100%;
+  padding: 4px 40px 0 2px;
+  font-size: 16px;
+  color: #333333;
+  border: none;
+  border-bottom: 1px solid #666666;
+  border-radius: 0px;
+}
+
+.selectfield select:focus {
+  outline: none
+}
+
+.selectfield {
+  display: inline-block;
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  position: relative;
+}
+
+.selectfield:after {
+  position: absolute;
+  top: 0.75em;
+  right: 0.7em;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: .25em solid transparent;
+  border-right: .25em solid transparent;
+  border-top: .375em solid #666666;
+  pointer-events: none;
+}
+
+
 textarea {
   padding: 10px 2%;
   line-height: 14px;
