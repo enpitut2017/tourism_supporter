@@ -10,8 +10,12 @@
       </div>
       <div class="item">
         <h2>緯度・経度</h2>
+        <div id="map"></div>
+        <%= javascript_include_tag "spots" %>
+        <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap" async defer></script>
         <%= f.number_field :lat, step:0.00000001, :placeholder => '緯度' %>
         <%= f.number_field :lng, step:0.00000001, :placeholder => '経度' %>
+        <span id="lat"></span>
       </div>
       <div class="item">
         <h2>画像</h2>

@@ -6,9 +6,15 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %>
+    <style>
+        #map {
+          height: 800px;
+          width: 400px;
+        }
+      </style>
     </head>
 
-  <body>
+  <body data-controller="<%= controller_name %>" data-action="<%= action_name %>">
     <%= render 'layouts/header' %>
     <% flash.each do |message_type, message|%>
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
@@ -16,5 +22,4 @@
     <%= yield %>
     <%= debug(params) if Rails.env.development? %>
   </body>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
 </html>
