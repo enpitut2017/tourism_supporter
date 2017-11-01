@@ -1,18 +1,19 @@
-<% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<% provide :header_title, "ログイン" %>
 
-<div>
-  <div>
-    <%= form_for(:session, url: login_path) do |f| %>
-
+<%= form_for(:session, url: login_path) do |f| %>
+  <div class="row">
+    <div class="input-field col s12">
       <%= f.label :email %>
       <%= f.email_field :email%>
+    </div>
 
+    <div class="input-field col s12">
       <%= f.label :password %>
       <%= f.password_field :password%>
+    </div>
 
-      <%= f.submit "Log in" %>
-    <% end %>
-
+    <div class="submit_button col s12">
+      <%= f.submit "Log in",  class: "waves-effect waves-light btn" %>
+    </div>
   </div>
-</div>
+<% end %>
