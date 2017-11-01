@@ -4,4 +4,14 @@ class MylistsController < ApplicationController
   def index
     @mylist = current_user.mylists
   end
+
+  def create
+    @mylist = Mylist.new(spot_id: params[:sp_id],user_id: current_user.id)
+    if @mylist.save
+        redirect_to user_path(current_user)
+      else
+        redirect_to user_path(current_user)
+      end
+
+  end
 end

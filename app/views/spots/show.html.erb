@@ -4,6 +4,7 @@
 <session class="spot_detail">
   <%= image_tag @spot.picture, :class => 'header_img' %>
   <div class="content">
+    <%= button_to "マイリストへ追加", mylists_path(sp_id: @spot.id) %>
     <div class="button_and_head">
       <h2>詳細情報</h2>
       <%= link_to "地図で開く", create_url(@spot.lat,@spot.lng), :target=>["_blank"], :class => 'button' %>
