@@ -1,0 +1,7 @@
+<% if logged_in? %>
+  <% if Mylist.find_by(spot_id: spot.id, user_id: current_user.id) %>
+  <%= button_to "マイリストから削除", mylist_path(sp_id: spot.id), method: :delete%>
+  <% else%>
+  <%= button_to "マイリストへ追加", mylists_path(sp_id: spot.id) %>
+  <% end %>
+<% end %>

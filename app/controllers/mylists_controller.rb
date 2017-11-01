@@ -14,4 +14,11 @@ class MylistsController < ApplicationController
       end
 
   end
+
+  def destroy
+    @mylist = Mylist.find_by(spot_id: params[:sp_id],user_id: current_user.id)
+    if @mylist.destroy
+      redirect_to user_path(current_user)
+    end
+  end
 end
