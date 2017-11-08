@@ -122,3 +122,8 @@ session.new_spot input[type="submit"]{
   padding: 0px 3%;
 
 }
+
+#map {
+  height: 375px;
+  width: 100%;
+}
