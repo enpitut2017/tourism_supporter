@@ -14,7 +14,7 @@
         <%= javascript_include_tag "spots" %>
         <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap" async defer></script>
         <%= f.number_field :lat, step:0.0000000000000000001, :placeholder => '緯度', :id => 'lat'%>
-        <%= f.number_field :lng, step:0.0000000000000000001, :placeholder => '経度', :id => 'lng' %>
+        <%= f.number_field :lng, step:0.0000000000000000001, :placeholder => '経度', :id => 'lng'%>
         <span id="lat"></span>
       </div>
       <div class="item">
