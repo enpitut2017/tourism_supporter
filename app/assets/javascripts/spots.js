@@ -3,7 +3,7 @@ function initMap() {
       // マップの初期化
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
-        center: {lat: 36.38992, lng: 139.06065}
+        center: {lat: 36.1087264, lng: 140.1017724}
       });
 
       // クリックイベントを追加
@@ -11,15 +11,20 @@ function initMap() {
         getClickLatLng(e.latLng, map);
       });
     }
-
+    var marker;
+    
     function getClickLatLng(lat_lng, map) {
 
       // 座標を表示
-      document.getElementById('spot_lat').nodeValue = lat_lng.lat();
-      document.getElementById('spot_lng').nodeValue = lat_lng.lng();
+      document.getElementById('lat').value = lat_lng.lat();
+      document.getElementById('lng').value = lat_lng.lng();
 
+
+      if (marker) {
+        marker.setMap(null);
+      }
       // マーカーを設置
-      var marker = new google.maps.Marker({
+      marker = new google.maps.Marker({
         position: lat_lng,
         map: map
       });
