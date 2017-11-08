@@ -10,11 +10,12 @@
       </div>
       <div class="item">
         <h2>緯度・経度</h2>
+        <p>地図上にスポットの場所をクリックして、位置を指定してください。</p>
         <div id="map"></div>
         <%= javascript_include_tag "spots" %>
         <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap" async defer></script>
-        <%= f.number_field :lat, step:0.0000000000000000001, :placeholder => '緯度', :id => 'lat'%>
-        <%= f.number_field :lng, step:0.0000000000000000001, :placeholder => '経度', :id => 'lng'%>
+        <%= f.hidden_field :lat, :id => 'lat'%>
+        <%= f.hidden_field :lng, :id => 'lng'%>
         <span id="lat"></span>
       </div>
       <div class="item">
