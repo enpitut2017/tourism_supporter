@@ -10,7 +10,8 @@ module SpotsHelper
   def googlemap_url()
     uri = URI(Settings.google_map_api.url)
     uri.query = {
-    key: Settings.google_map_api.key, callback: "initMap"
+      key: Settings.google_map_api.key,
+      callback: "initMap"
     }.to_param
     uri.to_s
   end
