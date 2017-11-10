@@ -12,7 +12,7 @@ function initMap() {
       });
     }
     var marker;
-    
+
     function getClickLatLng(lat_lng, map) {
 
       // 座標を表示
