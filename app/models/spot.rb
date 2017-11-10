@@ -15,4 +15,8 @@ class Spot < ApplicationRecord
       all #全て表示。User.は省略
     end
   end
+
+  def mylist_user(user_id)
+    mylists.find_by(user_id: user_id)
+  end
 end

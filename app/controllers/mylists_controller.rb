@@ -6,19 +6,18 @@ class MylistsController < ApplicationController
   end
 
   def create
-    @mylist = Mylist.new(spot_id: params[:sp_id],user_id: current_user.id)
+    @mylist = Mylist.new(spot_id: params[:spot],user_id: current_user.id)
     if @mylist.save
-        redirect_to user_path(current_user)
-      else
-        redirect_to user_path(current_user)
-      end
-
+      @word = "マイリストから削除"
+    end
+    @spot = Spot.find(params[:spot_id])
   end
 
   def destroy
-    @mylist = Mylist.find_by(spot_id: params[:sp_id],user_id: current_user.id)
+    @spot = Spot.find(params[:spot_id]);
+    @mylist = @spot.mylists
     if @mylist.destroy
-      redirect_to user_path(current_user)
+      @word = "マイリストへ追加"
     end
   end
 end
