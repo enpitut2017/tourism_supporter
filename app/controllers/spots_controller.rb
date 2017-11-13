@@ -6,7 +6,6 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    @myspot = Mylist.find_by(spot_id: @spot.id, user_id: current_user.id)
     @sort_by = params[:sort_by];
     case @sort_by
     when "new"

@@ -6,11 +6,10 @@ class MylistsController < ApplicationController
   end
 
   def create
-    @mylist = Mylist.new(spot_id: params[:id],user_id: current_user.id)
-    p params[:id]
+    @mylist = Mylist.new(spot_id: params[:spot_id],user_id: current_user.id)
     if @mylist.save
     end
-    @spot = Spot.find(params[:id])
+    @spot = Spot.find(params[:spot_id])
   end
 
   def destroy
