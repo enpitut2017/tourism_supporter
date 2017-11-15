@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   root 'spots#index'
 
-  resources :spots do
+  resources :spots, shallow: true do
+    resources :mylists, only: [:create, :destroy], formats: 'js'
     resources :advices, shallow: true do
       resources :likes, only: [:create, :destroy], formats: 'js'
     end
@@ -14,7 +15,8 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get    '/signup',  to: 'users#new'
+  get    '/mylists',  to: 'mylists#index'
   resources :users
-  resources :mylists
+
 
 end

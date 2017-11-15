@@ -1,0 +1,11 @@
+ <% if logged_in? %>
+  <% if spot.mylist_user(current_user.id) %>
+    <%= button_to mylist_path(spot), method: :delete, remote: true do%>
+    <span>マイリストから削除</span>
+    <% end %>
+  <% else%>
+    <%= button_to spot_mylists_path(spot), remote: true do%>
+      <span>マイリストへ追加</span>
+    <% end %>
+  <% end %>
+ <% end %>

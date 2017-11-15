@@ -27,4 +27,8 @@ class Spot < ApplicationRecord
       Spot.default_picture
     end
   end
+  
+  def mylist_user(user_id)
+    mylists.find_by(user_id: user_id)
+  end
 end
