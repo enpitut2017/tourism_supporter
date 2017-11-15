@@ -7,7 +7,8 @@ class MylistsController < ApplicationController
 
   def create
     @mylist = Mylist.new(spot_id: params[:spot_id],user_id: current_user.id)
-    if @mylist.save
+    unless @mylist.save
+      flash[:fails] = "マイリストに追加できませんでした"
     end
     @spot = Spot.find(params[:spot_id])
   end
@@ -15,7 +16,8 @@ class MylistsController < ApplicationController
   def destroy
     @spot = Spot.find(params[:id])
     @mylist = Mylist.find_by(user_id: current_user.id, spot_id: @spot.id)
-    if @mylist.destroy
+    unless @mylist.destroy
+      flash[:fails] = "マイリストから削除できませんでした"
     end
   end
 end
