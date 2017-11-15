@@ -10,7 +10,7 @@
       </div>
       <div class="col s4">
         <%= link_to "地図で開く",
-                    create_url(@advice.lat,@advice.lng),
+                    show_map_url(@advice.lat,@advice.lng),
                     target: ["_blank"],
                     class: "waves-effect waves-light btn wide" %>
       </div>
