@@ -2,12 +2,14 @@
 <% provide :header_title, "スポット詳細" %>
 
 <session class="spot_detail">
-  <%= image_tag @spot.picture, class: "responsive-img" if @spot.picture != Spot.default_picture %>
+  <div class="image-header">
+    <%= image_tag @spot.picture, class: "responsive-img" if @spot.picture != Spot.default_picture %>
+    <div id="mylistid"><%= render :partial => "mylist", locals: { spot: @spot } %></div>
+  </div>
   <div class="row">
     <div class="col s12">
       <h4><%= @spot.place_name %></h4>
     </div>
-    <div id="mylistid"><%= render :partial => "mylist", locals: { spot: @spot } %></div>
     <div class="col s8">
       <h5>詳細情報</h5>
     </div>
@@ -53,10 +55,5 @@
         </div>
       </div>
     <% end %>
-  </div>
-
-  <div class="content">
-    <ul>
-    </ul>
   </div>
 </session>
