@@ -1,15 +1,25 @@
 <% provide(:title, "Edit advice") %>
+<% provide :header_title, "アドバイス編集" %>
 
-<h1>Update your advice</h1>
-
-  <%= form_for(@advice) do |f| %>
-    <div class="item">
-      <h2>アドバイス</h2>
-      <%= f.text_area :comment, :placeholder => 'コメント' %>
-    </div>
-    <div class="item">
-      <h2>画像</h2>
-      <%= f.file_field :picture, accept: 'image/jpeg' %>
-    </div>
-    <%= f.submit "送信", :class => 'button'  %>
-  <% end %>
+<session class="edit_advice">
+  <div class="row">
+    <%= form_for(@advice) do |f| %>
+      <div class="input-field col s12">
+        <%= f.label :comment, "コメント", class: "active" %>
+        <%= f.text_area :comment, class: "materialize-textarea", id: "advice-comment" %>
+      </div>
+      <div class="file-field input-field col s12">
+        <div class="btn">
+          <span>画像</span>
+          <%= f.file_field :picture, accept: 'image/jpeg' %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+      <div class="submit_button col s12">
+        <%= f.submit "送信", class: "waves-effect waves-light btn" %>
+      </div>
+    <% end %>
+  </div>
+</session>

@@ -5,7 +5,7 @@
   <div class="row">
     <%= form_for([@spot, @advice]) do |f| %>
       <div class="input-field col s12">
-        <%= f.label :comment, "コメント" %>
+        <%= f.label :comment, "コメント", class: "active" %>
         <%= f.text_area :comment, class: "materialize-textarea" %>
       </div>
       <div class="file-field input-field col s12">
