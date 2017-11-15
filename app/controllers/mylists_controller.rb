@@ -6,7 +6,7 @@ class MylistsController < ApplicationController
   end
 
   def create
-    @mylist = Mylist.new(spot_id: params[:spot_id],user_id: current_user.id)
+    @mylist = Mylist.new(spot_id: params[:spot_id], user_id: current_user.id)
     unless @mylist.save
       flash[:fails] = "マイリストに追加できませんでした"
     end
