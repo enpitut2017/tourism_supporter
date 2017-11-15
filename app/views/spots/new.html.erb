@@ -10,18 +10,20 @@
       </div>
       <div class="item">
         <h2>緯度・経度</h2>
-        <%= f.number_field :lat, step:0.00000001, :placeholder => '緯度' %>
-        <%= f.number_field :lng, step:0.00000001, :placeholder => '経度' %>
-      </div>
-      <div class="item">
-        <h2>画像</h2>
-        <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
+        <p>スポットの場所をクリックして、位置を指定してください。</p>
+        <div id="map"></div>
+        <%= f.hidden_field :lat, :id => 'lat'%>
+        <%= f.hidden_field :lng, :id => 'lng'%>
+        <span id="lat"></span>
       </div>
       <div class="item">
         <h2>コメント</h2>
         <%= f.text_area :detail_comment, :placeholder => 'コメント' %>
       <div>
       <%= f.submit "送信", :class => 'button' %>
+      </div>
     <% end %>
   </div>
 </session>
+<script async defer src=<%= designate_map_url %>>
+</script>
