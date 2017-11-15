@@ -1,3 +1,15 @@
 // Place all the styles related to the likes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.advice_detail #like-button form {
+  padding: 0;
+}
+
+.advice_detail .favorite i.left {
+  margin-right: 5px;
+}
+
+.advice_detail .buttons {
+  margin-bottom: 10px;
+}

@@ -31,20 +31,16 @@ form.search_form {
   right: 0;
 }
 
-.map .btn, .create_advice .btn {
-  padding: 0;
-  width: 100%;
-}
-
 .card .card-content p.advice-text {
   margin: 10px 0;
 }
 
-.favorite i, .favorite span{
+.spot_detail .favorite i,
+.spot_detail .favorite span {
   vertical-align: middle;
 }
 
-.favorite span {
+.spot_detail .favorite span {
   font-size: 18px;
   margin: 0 5px;
 }

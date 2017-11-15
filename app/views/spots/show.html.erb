@@ -14,7 +14,7 @@
       <%= link_to "地図で開く",
                   create_url(@spot.lat,@spot.lng),
                   target: ["_blank"],
-                  class: "waves-effect waves-light btn" %>
+                  class: "waves-effect waves-light btn wide" %>
     </div>
     <div class="col s12">
       <p><%= @spot.detail_comment %></p>
@@ -27,7 +27,7 @@
     <div class="col s4 create_advice">
       <%= link_to "新規作成",
                   new_spot_advice_url(spot_id: @spot.id),
-                  class: "waves-effect waves-light btn" %>
+                  class: "waves-effect waves-light btn wide" %>
     </div>
     <div class="input-field col s12">
       <%= select_tag(:sort_by,
