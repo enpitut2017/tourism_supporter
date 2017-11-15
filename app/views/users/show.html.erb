@@ -1,11 +1,15 @@
 <% provide(:title, @user.name) %>
-  <aside>
-    <section>
-      <h1>
-        <%= @user.name %>
-      </h1>
+<% provide :header_title, "プロフィール" %>
+
+<section>
+  <div class="row">
+    <div class="col s12">
+      <h3><%= @user.name %></h3>
       <div>
-        <%= link_to "マイリスト", mylists_path %>
+        <%= link_to "マイリスト",
+                    mylists_path,
+                    class: "waves-effect waves-light btn" %>
       </div>
-    </section>
-  </aside>
+    </div>
+  </div>
+</section>
