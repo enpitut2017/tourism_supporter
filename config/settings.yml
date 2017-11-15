@@ -1,3 +1,6 @@
 google_map_api:
   url: "https://maps.googleapis.com/maps/api/js"
   key: "AIzaSyD6mIECPqB9mPk-U87n-wHFUuFj4OuZc4Q"
+
+show_map:
+  url: "https://maps.google.com/maps"
