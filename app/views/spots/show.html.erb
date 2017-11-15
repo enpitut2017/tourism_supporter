@@ -7,6 +7,7 @@
     <div class="col s12">
       <h4><%= @spot.place_name %></h4>
     </div>
+    <div id="mylistid"><%= render :partial => "mylist", locals: { spot: @spot } %></div>
     <div class="col s8">
       <h5>詳細情報</h5>
     </div>
