@@ -1,19 +1,18 @@
-<header>
-  <h1><%= yield :header_title %></h1>
-  <nav id="nav">
-    <button id="menu-button" class="menu-button"><span class="menu-button-icon"></span></button>
-    <ul>
-      <li><%= link_to 'Top', root_url %></li>
-      <% if logged_in? %>
-        <li><%= link_to "Profile", current_user %></li>
-        <li><%= link_to "Mylist", mylists_path %></li>
-        <li><%= link_to 'Log out', logout_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to 'Log in', login_path %></li>
-        <li><%= link_to 'Sign Up', signup_path %></li>
-      <% end %>
-    </ul>
-  </nav>
-</header>
+<ul id="dropdown1" class="dropdown-content">
+  <li><%= link_to 'Top', root_url %></li>
+  <% if logged_in? %>
+    <li><%= link_to "Profile", current_user %></li>
+    <li><%= link_to "Mylist", mylists_path %></li>
+    <li><%= link_to 'Log out', logout_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to 'Log in', login_path %></li>
+    <li><%= link_to 'Sign Up', signup_path %></li>
+  <% end %>
+</ul>
 
-<div class="margin"></div>
+<nav class="nav-wrapper">
+  <span class="brand-logo"><%= yield :header_title %></span>
+  <ul class="right">
+  <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">more_vert</i></a></li>
+  </ul>
+</nav>

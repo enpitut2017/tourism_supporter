@@ -1,18 +1,25 @@
 <% provide(:title, 'advice') %>
 <% provide :header_title, 'アドバイス作成' %>
 
-<session class="new_spot">
-  <div class="content">
+<session class="new_advice">
+  <div class="row">
     <%= form_for([@spot, @advice]) do |f| %>
-      <div class="item">
-        <h2>アドバイス</h2>
-        <%= f.text_area :comment, :placeholder => 'コメント' %>
+      <div class="input-field col s12">
+        <%= f.label :comment, "コメント", class: "active" %>
+        <%= f.text_area :comment, class: "materialize-textarea" %>
       </div>
-      <div class="item">
-        <h2>画像</h2>
-        <%= f.file_field :picture, accept: 'image/jpeg' %>
+      <div class="file-field input-field col s12">
+        <div class="btn">
+          <span>画像</span>
+          <%= f.file_field :picture, accept: 'image/jpeg' %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
       </div>
-      <%= f.submit "送信", :class => 'button'  %>
+      <div class="submit_button col s12">
+        <%= f.submit "送信", class: "waves-effect waves-light btn" %>
+      </div>
     <% end %>
   </div>
 </session>

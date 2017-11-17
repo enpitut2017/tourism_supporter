@@ -1,3 +1,18 @@
 // Place all the styles related to the Mylists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.image-header {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.image-header #mylistid {
+  position: absolute;
+  bottom: -23px;
+  right: 23px;
+}
+
+.image-header #mylistid form {
+  padding: 0;
+}

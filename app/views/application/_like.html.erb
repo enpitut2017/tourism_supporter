@@ -1,24 +1,20 @@
-<div id="like-button">
-  <% if logged_in? %>
-    <% if advice.like_user(current_user.id) %>
-      <%= button_to like_path(advice.like_user(current_user.id)), method: :delete, remote: true do %>
-        <span>Like</span>
-        <span>
-          <%= advice.likes_count %>
-        </span>
-      <% end %>
-    <% else %>
-      <%= button_to advice_likes_path(advice), id: "like-button", remote: true do %>
-        <span>Like</span>
-        <span>
-          <%= advice.likes_count %>
-        </span>
+<% if logged_in? %>
+  <% if advice.like_user(current_user.id) %>
+    <%= button_to like_path(advice.like_user(current_user.id)),
+                  method: :delete,
+                  class: "favorite waves-effect waves-teal btn-flat",
+                  remote: true do %>
+    <span class="pink-text"><i class="material-icons left">favorite</i><%= advice.likes_count %></span>
+    <% end %>
+  <% else %>
+    <%= button_to advice_likes_path(advice),
+                  class: "favorite waves-effect waves-teal btn-flat",
+                  remote: true do %>
+      <i class="material-icons left">favorite_border</i><%= advice.likes_count %>
       <% end %>
     <% end %>
   <% else %>
-    <span>Like</span>
-    <span>
-      <%= advice.likes_count %>
-    </span>
-  <% end %>
-</div>
+  <button class="favorite btn disabled">
+    <i class="material-icons left">favorite</i><%= advice.likes_count %>
+  </button>
+<% end %>
