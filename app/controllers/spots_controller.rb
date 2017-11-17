@@ -25,6 +25,12 @@ class SpotsController < ApplicationController
       flash[:success] = "スポット作成ができました"
       redirect_to @spot
     else
+      if params[:spot][:place_name].blank?
+        flash[:danger] = "スポット名を入力してください"
+      end
+      if params[:spot][:lat].blank? || params[:spot][:lng].blank?
+        flash[:warning] = "位置情報を入力してください"
+      end
       render 'new'
     end
   end
