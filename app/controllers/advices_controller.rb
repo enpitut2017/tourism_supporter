@@ -16,6 +16,9 @@ class AdvicesController < ApplicationController
     if @advice.save
       redirect_to controller: 'spots', action: 'show', id: @advice.spot_id
     else
+      if params[:advice][:comment].blank?
+        flash[:danger] = "コメントを入力して下さい"
+      end
       render 'new'
     end
   end
