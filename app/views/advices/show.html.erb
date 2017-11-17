@@ -24,7 +24,7 @@
       <p><%= @advice.comment %></p>
     </div>
     <div class="col s12">
-      <div class="buttons", id="like-button">
+      <div class="buttons", id=<%= "like-button-#{@advice.id}" %>>
         <%= render :partial => "like", locals: { advice: @advice} %>
       </div>
       <% if current_user == @advice.user %>

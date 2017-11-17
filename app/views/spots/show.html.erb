@@ -47,7 +47,9 @@
           <div class="card-content">
             <p><time class="grey-text"><%= advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time></p>
             <p class="advice-text"><%= advice.comment %></p>
-            <div class="favorite pink-text"><i class="material-icons">favorite</i><span><%= advice.likes_count %></span></div>
+            <div id=<%= "like-button-#{advice.id}" %>>
+              <%= render :partial => "like", locals: { advice: advice} %>
+            </div>
           </div>
           <div class="card-action">
             <%= link_to "detail", advice %>
