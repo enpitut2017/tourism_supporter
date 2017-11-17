@@ -17,6 +17,6 @@ class PictureUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    "#{Time.now}.#{file.extension}"
+    "#{Time.now}.#{file.extension}" if original_filename.present?
   end
 end
