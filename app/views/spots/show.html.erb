@@ -3,7 +3,7 @@
 
 <session class="spot_detail">
   <div class="image-header">
-    <%= image_tag @spot.picture, class: "responsive-img" if @spot.picture != Spot.default_picture %>
+    <%= image_tag @spot.picture, class: "responsive-img" %>
     <div id="mylistid"><%= render :partial => "mylist", locals: { spot: @spot } %></div>
   </div>
   <div class="row">
