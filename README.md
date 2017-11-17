@@ -1,4 +1,4 @@
-## enPiT観光局 「いいねサポーター」
+## enPiT観光局 「フォトフォーラム」
 ## エレベーターピッチ
 「いい写真を撮りたい」という課題を解決したい
 
@@ -6,7 +6,7 @@
 
 「SNSでいいねがもらえる写真が撮れる」ことを実現する
 
-「いいねサポーター」です。
+「フォトフォーラム」です。
 
 これは「撮影ポイント等、撮影の情報を提供（共有）でき
 
@@ -16,7 +16,7 @@
 
 ## URL
 * サービスのURL
-https://tourism-supporter.herokuapp.com
+https://photos-forum.herokuapp.com/
 * CIのURL
 https://circleci.com/gh/enpitut2017/tourism_supporter
 * タスクカンバンのURL
