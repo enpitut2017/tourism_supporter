@@ -34,7 +34,7 @@ class AdvicesController < ApplicationController
   def update
     @advice = Advice.find(params[:id])
     if @advice.update_attributes(advice_params)
-       redirect_to controller: 'advices', action: 'show', id: @advice.spot_id
+       redirect_to controller: 'advices', action: 'show', id: @advice.id
     else
       render 'edit'
     end
