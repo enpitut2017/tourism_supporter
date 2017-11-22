@@ -1,6 +1,14 @@
 class PictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   process resize_to_limit: [1920, 1920]
+  process :fix_rotate
+  def fix_rotate
+    manipulate! do |img|
+      img = img.auto_orient
+      img = yield(img) if block_given?
+      img
+    end
+  end
 
   if Rails.env.production?
     storage :fog
