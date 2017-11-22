@@ -2,28 +2,30 @@
 <% provide :header_title, 'スポット作成' %>
 
 <session class="new_spot">
-  <div class="content">
+  <div class="row">
     <%= form_for(@spot) do |f| %>
-      <div class="item">
-        <h2>スポット名</h2>
-        <%= f.text_field :place_name, :placeholder => 'スポット名' %>
+      <div class="col s12">
+        <h3>スポット情報</h3>
+        <div class="input-field">
+          <%= f.label :place_name, "スポット名" %>
+          <%= f.text_field :place_name %>
+        </div>
+        <div class="input-field">
+          <%= f.label :detail_comment, "コメント" %>
+          <%= f.text_area :detail_comment, class: "materialize-textarea" %>
+        </div>
       </div>
-      <div class="item">
-        <h2>緯度・経度</h2>
+      <div class="col s12">
+        <h3>緯度・経度</h3>
         <p>スポットの場所をクリックして、位置を指定してください。</p>
         <div id="map"></div>
         <%= f.hidden_field :lat, :id => 'lat'%>
         <%= f.hidden_field :lng, :id => 'lng'%>
-        <span id="lat"></span>
       </div>
-      <div class="item">
-        <h2>コメント</h2>
-        <%= f.text_area :detail_comment, :placeholder => 'コメント' %>
-      <div>
-      <%= f.submit "送信", :class => 'button' %>
+      <div class="submit_button col s12">
+        <%= f.submit "送信", class: "waves-effect waves-light btn" %>
       </div>
     <% end %>
   </div>
 </session>
-<script async defer src=<%= designate_map_url %>>
-</script>
+<script defer src=<%= designate_map_url %>></script>

@@ -1,6 +1,7 @@
+<% provide :header_title, "マイリスト" %>
 <% provide(:title, "マイリスト") %>
 
-<ul class="spots">
+<ul class="spots row">
   <% @mylist.each {|mylist| %>
     <%= render 'layouts/spot', spot: mylist.spot %>
   <% } %>

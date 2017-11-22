@@ -1,11 +1,16 @@
  <% if logged_in? %>
   <% if spot.mylist_user(current_user.id) %>
-    <%= button_to mylist_path(spot), method: :delete, remote: true do%>
-    <span>マイリストから削除</span>
+    <%= button_to mylist_path(spot),
+                  method: :delete,
+                  class: "btn-floating btn-large waves-effect waves-light red",
+                  remote: true do%>
+      <span><i class="material-icons">star</i></span>
     <% end %>
   <% else%>
-    <%= button_to spot_mylists_path(spot), remote: true do%>
-      <span>マイリストへ追加</span>
+    <%= button_to spot_mylists_path(spot),
+                  class: "btn-floating btn-large waves-effect waves-light red",
+                  remote: true do%>
+      <span><i class="material-icons">star_border</i></span>
     <% end %>
   <% end %>
- <% end %>
+<% end %>
