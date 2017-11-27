@@ -2,9 +2,15 @@
 <% provide :header_title, "スポット詳細" %>
 
 <session class="spot_detail">
-  <div class="image-header">
-    <%= image_tag @spot.picture, class: "responsive-img" if @spot.picture != Spot.default_picture %>
-    <div id="mylistid"><%= render :partial => "mylist", locals: { spot: @spot } %></div>
+  <div>
+    <div class="image-header">
+      <%= image_tag @spot.picture, class: "responsive-img header-img" if @spot.picture != Spot.default_picture %>
+      <div class="gray-background">
+        <div class="iamge" style="background-image: url(<%== asset_url(@spot.picture) %>);"></div>
+        <div class="gray"></div>
+      </div>
+      <div id="mylistid"><%= render :partial => "mylist", locals: { spot: @spot } %></div>
+    </div>
   </div>
   <div class="row">
     <div class="col s12">

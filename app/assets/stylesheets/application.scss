@@ -34,6 +34,46 @@
   width: 100%;
 }
 
+img.header-img {
+  max-width: 800px;
+  display: block;
+  margin: auto;
+}
+
+.gray-background {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.gray-background .iamge {
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(10px);
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -2;
+}
+
+.gray-background .gray {
+  z-index: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
 @media only screen and (max-width: 500px) {
   nav .brand-logo {
     font-size: 1.4rem;
