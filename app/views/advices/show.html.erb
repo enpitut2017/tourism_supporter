@@ -33,6 +33,7 @@
           <%= link_to "DELETE", @advice, class: "waves-effect waves-teal btn", method: :delete, data: { confirm: "You sure?" } %>
         </div>
       <% end %>
+      <%= render 'application/comment', comments: @comment %>
     </div>
 
   </div>
