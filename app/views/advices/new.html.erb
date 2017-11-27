@@ -2,7 +2,7 @@
 <% provide :header_title, 'アドバイス作成' %>
 
 <session class="new_advice">
-  <div class="row">
+  <div class="row main">
     <%= form_for([@spot, @advice]) do |f| %>
       <div class="input-field col s12">
         <%= f.label :comment, "コメント", class: "active" %>
