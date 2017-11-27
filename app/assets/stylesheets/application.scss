@@ -74,6 +74,10 @@ img.header-img {
   z-index: -1;
 }
 
+.main {
+  max-width: 1200px;
+}
+
 @media only screen and (max-width: 500px) {
   nav .brand-logo {
     font-size: 1.4rem;
