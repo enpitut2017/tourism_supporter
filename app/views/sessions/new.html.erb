@@ -1,13 +1,13 @@
 <% provide :header_title, "ログイン" %>
 
 <%= form_for(:session, url: login_path) do |f| %>
-  <div class="row">
-    <div class="input-field col s12">
+  <div class="row main">
+    <div class="input-field col s12 l6">
       <%= f.label :email %>
       <%= f.email_field :email%>
     </div>
 
-    <div class="input-field col s12">
+    <div class="input-field col s12 l6">
       <%= f.label :password %>
       <%= f.password_field :password%>
     </div>

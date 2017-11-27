@@ -2,8 +2,14 @@
 <% provide :header_title, "アドバイス詳細" %>
 
 <session class="advice_detail">
-  <%= image_tag @advice.picture.url, :class => "responsive-img" if @advice.picture? %>
-  <div class="row">
+  <div class="image-header">
+  <%= image_tag @advice.picture.url, :class => "responsive-img header-img" if @advice.picture? %>
+  <div class="gray-background">
+    <div class="iamge" style="background-image: url(<%== asset_url(@advice.picture) %>);"></div>
+    <div class="gray"></div>
+  </div>
+  </div>
+  <div class="row main">
     <% if @advice.lat != nil && @advice.lng != nil %>
       <div class="col s8">
         <h5>アドバイス (<%= @advice.spot.place_name %>)</h5>
