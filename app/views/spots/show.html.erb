@@ -2,66 +2,72 @@
 <% provide :header_title, "スポット詳細" %>
 
 <session class="spot_detail">
-  <div>
-    <div class="image-header">
-      <%= image_tag @spot.picture, class: "responsive-img header-img" if @spot.picture != Spot.default_picture %>
-      <div class="gray-background">
-        <div class="iamge" style="background-image: url(<%== asset_url(@spot.picture) %>);"></div>
-        <div class="gray"></div>
-      </div>
+  <div class="image-header">
+    <%= image_tag @spot.picture, class: "responsive-img header-img" if @spot.picture != Spot.default_picture %>
+    <div class="gray-background">
+      <div class="iamge" style="background-image: url(<%== asset_url(@spot.picture) %>);"></div>
+      <div class="gray"></div>
+    </div>
+    <div class="button-composer main">
       <div id="mylistid"><%= render :partial => "mylist", locals: { spot: @spot } %></div>
     </div>
   </div>
-  <div class="row">
+  <div class="row main">
     <div class="col s12">
       <h4><%= @spot.place_name %></h4>
     </div>
-    <div class="col s8">
-      <h5>詳細情報</h5>
-    </div>
-    <div class="col s4 map">
-      <%= link_to "地図で開く",
-                  show_map_url(@spot.lat,@spot.lng),
-                  target: ["_blank"],
-                  class: "waves-effect waves-light btn wide" %>
-    </div>
-    <div class="col s12">
-      <p><%= @spot.detail_comment %></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s8">
-      <h5>アドバイス</h5>
-    </div>
-    <div class="col s4 create_advice">
-      <%= link_to "新規作成",
-                  new_spot_advice_url(spot_id: @spot.id),
-                  class: "waves-effect waves-light btn wide" %>
-    </div>
-    <div class="input-field col s12">
-      <%= select_tag(:sort_by,
-                    options_for_select([["新着順", "new"], ["いいね数", "hot"]], @sort_by),
-                    onchange: "location.href='?sort_by=' + value;") %>
-      <label>並び替え</label>
-    </div>
-    <% @advices.each do |advice| %>
-      <div class="input-field col s12">
-        <div class="card">
-          <div class="card-image">
-            <%= image_tag advice.picture.url, class: "responsive-img" if advice.picture? %>
-          </div>
-          <div class="card-content">
-            <p><time class="grey-text"><%= advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time></p>
-            <p class="advice-text"><%= advice.comment %></p>
-            <div id=<%= "like-button-#{advice.id}" %>>
-              <%= render :partial => "like", locals: { advice: advice} %>
-            </div>
-          </div>
-          <div class="card-action">
-            <%= link_to "detail", advice %>
-          </div>
+    <div class="col s12 l4 push-l8">
+      <div class="row">
+        <div class="col s8 m9 l6">
+          <h5>詳細情報</h5>
+        </div>
+        <div class="col s4 m3 l6 map">
+          <%= link_to "地図で開く",
+                      show_map_url(@spot.lat,@spot.lng),
+                      target: ["_blank"],
+                      class: "waves-effect waves-light btn wide" %>
+        </div>
+        <div class="col s12">
+          <p><%= @spot.detail_comment %></p>
         </div>
       </div>
-    <% end %>
+    </div>
+    <div class="col s12 l8 pull-l4">
+      <div class="row">
+        <div class="col s8 m9">
+          <h5>アドバイス</h5>
+        </div>
+        <div class="col s4 m3 create_advice">
+          <%= link_to "新規作成",
+                      new_spot_advice_url(spot_id: @spot.id),
+                      class: "waves-effect waves-light btn wide" %>
+        </div>
+        <div class="input-field col s12">
+          <%= select_tag(:sort_by,
+                        options_for_select([["新着順", "new"], ["いいね数", "hot"]], @sort_by),
+                        onchange: "location.href='?sort_by=' + value;") %>
+          <label>並び替え</label>
+        </div>
+        <% @advices.each do |advice| %>
+          <div class="input-field col s12">
+            <div class="card">
+              <div class="card-image">
+                <%= image_tag advice.picture.url, class: "responsive-img" if advice.picture? %>
+              </div>
+              <div class="card-content">
+                <p><time class="grey-text"><%= advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time></p>
+                <p class="advice-text"><%= advice.comment %></p>
+                <div id=<%= "like-button-#{advice.id}" %>>
+                  <%= render :partial => "like", locals: { advice: advice} %>
+                </div>
+              </div>
+              <div class="card-action">
+                <%= link_to "detail", advice %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </session>
