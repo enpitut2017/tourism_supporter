@@ -3,7 +3,7 @@
 
 <session class="spot_detail">
   <div class="image-header">
-    <%= image_tag @spot.picture, class: "responsive-img header-img" if @spot.picture != Spot.default_picture %>
+    <%= image_tag @spot.picture, class: "responsive-img header-img" %>
     <div class="gray-background">
       <div class="iamge" style="background-image: url(<%== asset_url(@spot.picture) %>);"></div>
       <div class="gray"></div>

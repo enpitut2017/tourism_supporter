@@ -17,7 +17,7 @@ class AdvicesController < ApplicationController
       redirect_to controller: 'spots', action: 'show', id: @advice.spot_id
     else
       if params[:advice][:comment].blank?
-        flash[:danger] = "コメントを入力して下さい"
+        flash.now[:danger] = "コメントを入力して下さい"
       end
       render 'new'
     end
@@ -34,7 +34,7 @@ class AdvicesController < ApplicationController
   def update
     @advice = Advice.find(params[:id])
     if @advice.update_attributes(advice_params)
-       redirect_to controller: 'advices', action: 'show', id: @advice.spot_id
+       redirect_to controller: 'advices', action: 'show', id: @advice.id
     else
       render 'edit'
     end
