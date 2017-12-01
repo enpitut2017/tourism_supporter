@@ -10,28 +10,23 @@
   </div>
   </div>
   <div class="row main">
-    <% if @advice.lat != nil && @advice.lng != nil %>
-      <div class="col s8">
-        <h5>アドバイス (<%= @advice.spot.place_name %>)</h5>
-      </div>
-      <div class="col s4">
-        <%= link_to "地図で開く",
-                    show_map_url(@advice.lat,@advice.lng),
-                    target: ["_blank"],
-                    class: "waves-effect waves-light btn wide" %>
-      </div>
-    <% else %>
-      <div class="col s12">
-        <h5>アドバイス (<%= @advice.spot.place_name %>)</h5>
-      </div>
-    <% end %>
     <div class="col s12">
-      <time class="grey-text"><%= @advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
+      <h5><%= @advice.spot.place_name %></h5>    
+      <div class="advice-header">
+        <%= link_to @advice.user.name, @advice.user, class: "name" %>
+        <time class="grey-text"><%= @advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
+      </div>
       <p><%= @advice.comment %></p>
     </div>
     <div class="col s12">
       <div class="buttons", id=<%= "like-button-#{@advice.id}" %>>
         <%= render :partial => "like", locals: { advice: @advice} %>
+        <% if @advice.lat != nil && @advice.lng != nil %>
+          <%= link_to "地図で開く",
+              show_map_url(@advice.lat,@advice.lng),
+              target: ["_blank"],
+              class: "waves-effect waves-light btn" %>
+        <% end %>
       </div>
       <% if current_user == @advice.user && logged_in? %>
         <div class="buttons">

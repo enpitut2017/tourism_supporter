@@ -5,11 +5,13 @@
   <div class="row main">
     <div class="col s12">
       <h3><%= @user.name %></h3>
-      <div>
-        <%= link_to "マイリスト",
-                    mylists_path,
-                    class: "waves-effect waves-light btn" %>
-      </div>
+      <% if current_user == @user && logged_in? %>
+        <div>
+          <%= link_to "マイリスト",
+                      mylists_path,
+                      class: "waves-effect waves-light btn" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>
