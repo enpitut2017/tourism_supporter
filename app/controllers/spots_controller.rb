@@ -43,9 +43,7 @@ private
 
   def search
     if params[:lat].present? && params[:lng].present?
-      @spots = @spots.within(1, :origin => [params[:lat], params[:lng]])
-    elsif
-      @spots
+      @spots = @spots.within(params[:distance], :origin => [params[:lat], params[:lng]])
     end
   end
 

@@ -1,10 +1,11 @@
-function getPosition() {
+$('#location-button').click(function() {
   // 現在地を取得
   navigator.geolocation.getCurrentPosition(
     // 取得成功した場合
     function(position) {
         document.getElementById('lat').value = position.coords.latitude;
         document.getElementById('lng').value = position.coords.longitude;
+        $('#location-form').submit();
     },
     // 取得失敗した場合
     function(error) {
@@ -24,4 +25,4 @@ function getPosition() {
       }
     }
   );
-}
+});

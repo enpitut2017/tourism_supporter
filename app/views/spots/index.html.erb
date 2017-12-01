@@ -1,9 +1,11 @@
 <% provide :header_title, 'フォトフォーラム' %>
 
-<%= form_tag(spots_path, method: "get", class: "search_form row") do %>
+<%= form_tag(spots_path, method: "get", id: "location-form", class: "search_form row") do %>
   <div class="input-field col s12">
     <%= text_field_tag :search,  params[:search], :placeholder => 'キーワード検索' %>
-    <input type='button' value="現在地から探す", onclick="getPosition()">
+    <p> 現在地から検索する範囲を選択してください </p>
+    <input type="range" name="distance" min="1" max="20">
+    <input id='location-button' type='button' value="現在地から検索">
     <%= hidden_field_tag 'lat'%>
     <%= hidden_field_tag 'lng'%>
   </div>
