@@ -25,7 +25,8 @@ class AdvicesController < ApplicationController
 
   def show
     @advice = Advice.find(params[:id])
-    @comment = Comment.where(advice_id: @advice.id)
+    @comments = Comment.where(advice_id: @advice.id)
+    @comment = Comment.new
   end
 
   def edit
