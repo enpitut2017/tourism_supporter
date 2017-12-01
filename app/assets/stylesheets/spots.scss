@@ -57,6 +57,19 @@ form.search_form {
   margin-bottom: 20px;
 }
 
+.advice-header {
+  display: flex;
+  align-items: baseline;
+}
+
+.advice-header .name {
+  flex: 1;
+}
+
+.advice-header time {
+  display: block;
+}
+
 @media only screen and (min-width: 600px) {
   .spots div {
     height: 340px;
