@@ -2,7 +2,9 @@ class SpotsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create]
   def index
     @spots = Spot.search(params[:search])
-    search
+    if params[:lat].present? && params[:lng].present?
+      @spots = @spots.within(params[:distance], :origin => [params[:lat], params[:lng]])
+    end
   end
 
   def show
@@ -39,12 +41,6 @@ class SpotsController < ApplicationController
 private
   def spot_params
     params.require(:spot).permit(:place_name, :lat, :lng, :detail_comment)
-  end
-
-  def search
-    if params[:lat].present? && params[:lng].present?
-      @spots = @spots.within(params[:distance], :origin => [params[:lat], params[:lng]])
-    end
   end
 
 end
