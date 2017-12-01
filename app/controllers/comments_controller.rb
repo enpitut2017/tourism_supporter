@@ -10,6 +10,14 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:comment_id])
+    if @comment.destroy
+      flash[:success] = "コメントの削除に成功しました"
+      redirect_to advice_path(params[:id])
+    else
+      flash[:faild] = "コメントの削除に失敗しました"
+      redirect_to advice_path(params[:id])
+    end
   end
 
   def update
