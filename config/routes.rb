@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :mylists, only: [:create, :destroy], formats: 'js'
     resources :advices, shallow: true do
       resources :likes, only: [:create, :destroy], formats: 'js'
-      resources :comments, only: [:create, :destroy, :update]
+      resources :comments, only: [:create, :destroy]
     end
   end
   get    '/login',   to: 'sessions#new'

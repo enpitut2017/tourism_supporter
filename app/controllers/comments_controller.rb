@@ -19,7 +19,4 @@ class CommentsController < ApplicationController
       redirect_to advice_path(params[:id])
     end
   end
-
-  def update
-  end
 end
