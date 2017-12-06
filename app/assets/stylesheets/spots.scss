@@ -70,6 +70,20 @@ form.search_form {
   display: block;
 }
 
+.search-area {
+  display: flex;
+  align-items: baseline;
+}
+
+.search-area .search_form {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.search-area .buttons .btn {
+  padding: 0 1rem;
+}
+
 .setting-header {
   display: flex;
   align-items: baseline;
