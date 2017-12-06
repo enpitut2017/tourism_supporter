@@ -11,8 +11,11 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
-    flash[:success] = "comment deleted"
+    if @comment.destroy
+      flash[:success] = "comment deleted"
+    else
+      flash[:failed] = "comment destroy failed"
+    end
     redirect_to advice_path(@comment.advice)
   end
 
