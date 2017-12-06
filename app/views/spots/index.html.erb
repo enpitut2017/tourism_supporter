@@ -10,6 +10,7 @@
     <%= hidden_field_tag 'lng'%>
   </div>
 <% end %>
+<a class="waves-effect waves-light btn modal-trigger" href="#search-setting">Modal</a>
 
 <% if @spots.blank? %>
   <session class="search_result">
@@ -31,3 +32,28 @@
     <% end %>
   </div>
 <% end %>
+
+<div id="search-setting" class="modal search-setting">
+  <div class="modal-content">
+    <h4>検索の詳細設定</h4>
+    <div class="setting-header">
+      <div class="title">
+        距離での絞り込み(km)
+      </div>
+      <div class="button">
+        <div class="switch">
+          <label>
+            <input type="checkbox">
+            <span class="lever"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <p class="range-field">
+      <input type="range" name="distance" min="1" max="20">
+    </p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">設定</a>
+  </div>
+</div>

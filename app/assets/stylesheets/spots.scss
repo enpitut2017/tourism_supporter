@@ -70,6 +70,15 @@ form.search_form {
   display: block;
 }
 
+.setting-header {
+  display: flex;
+  align-items: baseline;
+}
+
+.setting-header .title {
+  flex: 1;
+}
+
 @media only screen and (min-width: 600px) {
   .spots div {
     height: 340px;
