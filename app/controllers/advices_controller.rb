@@ -25,6 +25,8 @@ class AdvicesController < ApplicationController
 
   def show
     @advice = Advice.find(params[:id])
+    @comments = Comment.where(advice_id: @advice.id)
+    @comment = Comment.new
   end
 
   def edit
@@ -41,6 +43,7 @@ class AdvicesController < ApplicationController
   end
 
   def destroy
+    @advice = Advice.find(params[:id])
     @advice.destroy
     flash[:success] = "advide deleted"
     redirect_to controller: 'spots', action: 'show', id: @advice.spot_id
