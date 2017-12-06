@@ -1,22 +1,23 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new(content: params[:comment][:content], user_id: current_user.id, advice_id: params[:advice_id])
-    if @comment.save
-      redirect_to advice_path(params[:advice_id])
-    else
+    @advice = Advice.find(params[:advice_id])
+    @comment = @advice.comments.build(comment_params)
+    @comment.user = current_user
+    unless @comment.save
       flash[:faild] = "コメントの作成に失敗しました"
-      redirect_to advice_path(params[:advice_id])
     end
+    redirect_to advice_path(id: @advice.id)
   end
 
   def destroy
-    @comment = Comment.find(params[:comment_id])
-    if @comment.destroy
-      flash[:success] = "コメントの削除に成功しました"
-      redirect_to advice_path(params[:id])
-    else
-      flash[:faild] = "コメントの削除に失敗しました"
-      redirect_to advice_path(params[:id])
-    end
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    flash[:success] = "comment deleted"
+    redirect_to advice_path(@comment.advice)
   end
+
+  private
+    def comment_params
+      params.require(:comment).permit(:content)
+    end
 end

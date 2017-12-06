@@ -1,6 +1,6 @@
 <% comments.each do |comment| %>
   <%= comment.user.name %>
   <%= comment.content %>
-  <%= button_to "delete", comment_path(comment_id: comment.id), method: :delete %>
+  <%= link_to "DELETE", comment, class: "waves-effect waves-teal btn", method: :delete, data: { confirm: "You sure?" } %>
   <br>
 <% end %>

@@ -43,6 +43,7 @@ class AdvicesController < ApplicationController
   end
 
   def destroy
+    @advice = Advice.find(params[:id])
     @advice.destroy
     flash[:success] = "advide deleted"
     redirect_to controller: 'spots', action: 'show', id: @advice.spot_id
