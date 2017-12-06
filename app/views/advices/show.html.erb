@@ -35,7 +35,7 @@
       <% end %>
       <%= render 'application/comment', comments: @comments %>
 
-      <% if current_user == @advice.user && logged_in? %>
+      <% if logged_in? %>
         <%= form_for([@advice, @comment]) do |f| %>
           <%= f.label :content, "コメント", class: "active" %>
           <%= f.text_area :content, class: "materialize-textarea", id: "advice-comment" %>

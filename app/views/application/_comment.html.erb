@@ -1,6 +1,8 @@
 <% comments.each do |comment| %>
   <%= comment.user.name %>
   <%= comment.content %>
-  <%= link_to "DELETE", comment, class: "waves-effect waves-teal btn", method: :delete, data: { confirm: "You sure?" } %>
+  <% if current_user == comment.user %>
+    <%= link_to "DELETE", comment, class: "waves-effect waves-teal btn", method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
   <br>
 <% end %>
