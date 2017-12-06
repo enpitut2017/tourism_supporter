@@ -2,36 +2,49 @@
 <% provide :header_title, "アドバイス詳細" %>
 
 <session class="advice_detail">
-  <%= image_tag @advice.picture.url, :class => "responsive-img" if @advice.picture? %>
-  <div class="row">
-    <% if @advice.lat != nil && @advice.lng != nil %>
-      <div class="col s8">
-        <h5>アドバイス (<%= @advice.spot.place_name %>)</h5>
-      </div>
-      <div class="col s4">
-        <%= link_to "地図で開く",
-                    show_map_url(@advice.lat,@advice.lng),
-                    target: ["_blank"],
-                    class: "waves-effect waves-light btn wide" %>
-      </div>
-    <% else %>
-      <div class="col s12">
-        <h5>アドバイス (<%= @advice.spot.place_name %>)</h5>
-      </div>
-    <% end %>
+  <div class="image-header">
+  <%= image_tag @advice.picture.url, :class => "responsive-img header-img" if @advice.picture? %>
+  <div class="gray-background">
+    <div class="iamge" style="background-image: url(<%== asset_url(@advice.picture) %>);"></div>
+    <div class="gray"></div>
+  </div>
+  </div>
+  <div class="row main">
     <div class="col s12">
-      <time class="grey-text"><%= @advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
+      <h5><%= @advice.spot.place_name %></h5>    
+      <div class="advice-header">
+        <%= link_to @advice.user.name, @advice.user, class: "name" %>
+        <time class="grey-text"><%= @advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
+      </div>
       <p><%= @advice.comment %></p>
     </div>
     <div class="col s12">
       <div class="buttons", id=<%= "like-button-#{@advice.id}" %>>
         <%= render :partial => "like", locals: { advice: @advice} %>
+        <% if @advice.lat != nil && @advice.lng != nil %>
+          <%= link_to "地図で開く",
+              show_map_url(@advice.lat,@advice.lng),
+              target: ["_blank"],
+              class: "waves-effect waves-light btn" %>
+        <% end %>
       </div>
       <% if current_user == @advice.user && logged_in? %>
         <div class="buttons">
           <%= link_to "EDIT", edit_advice_path, class: "waves-effect waves-teal btn" %>
           <%= link_to "DELETE", @advice, class: "waves-effect waves-teal btn", method: :delete, data: { confirm: "You sure?" } %>
         </div>
+      <% end %>
+      <%= render 'application/comment', comments: @comments %>
+
+      <% if logged_in? %>
+        <%= form_for([@advice, @comment]) do |f| %>
+          <%= f.label :content, "コメント", class: "active" %>
+          <%= f.text_area :content, class: "materialize-textarea", id: "advice-comment" %>
+          <div class="buttons">
+            <%= f.submit "COMMENT", class: "waves-effect waves-light btn" %>
+          </div>
+        <% end %>
+
       <% end %>
     </div>
 

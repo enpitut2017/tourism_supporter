@@ -2,7 +2,7 @@
 <% provide :header_title, 'スポット作成' %>
 
 <session class="new_spot">
-  <div class="row">
+  <div class="row main">
     <%= form_for(@spot) do |f| %>
       <div class="col s12">
         <h3>スポット情報</h3>
@@ -23,7 +23,7 @@
         <%= f.hidden_field :lng, :id => 'lng'%>
       </div>
       <div class="submit_button col s12">
-        <%= f.submit "送信", class: "waves-effect waves-light btn" %>
+        <%= button_tag "送信", type: "submit", class: "waves-effect waves-light btn" %>
       </div>
     <% end %>
   </div>

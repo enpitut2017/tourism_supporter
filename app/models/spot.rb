@@ -6,6 +6,7 @@ class Spot < ApplicationRecord
             uniqueness: true
   validates :lat, presence: true
   validates :lng, presence: true
+  acts_as_mappable :default_units => :kms
 
   def self.search(search) #ここでのself.はUser.を意味する
     if search
@@ -27,7 +28,7 @@ class Spot < ApplicationRecord
       Spot.default_picture
     end
   end
-  
+
   def mylist_user(user_id)
     mylists.find_by(user_id: user_id)
   end

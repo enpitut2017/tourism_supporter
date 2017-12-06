@@ -1,19 +1,19 @@
 <% provide :header_title, "ログイン" %>
 
 <%= form_for(:session, url: login_path) do |f| %>
-  <div class="row">
-    <div class="input-field col s12">
+  <div class="row main">
+    <div class="input-field col s12 l6">
       <%= f.label :email %>
       <%= f.email_field :email%>
     </div>
 
-    <div class="input-field col s12">
+    <div class="input-field col s12 l6">
       <%= f.label :password %>
       <%= f.password_field :password%>
     </div>
 
     <div class="submit_button col s12">
-      <%= f.submit "Log in",  class: "waves-effect waves-light btn" %>
+      <%= button_tag "Log in", type: "submit", class: "waves-effect waves-light btn" %>
     </div>
   </div>
 <% end %>

@@ -11,7 +11,7 @@ class AdvicesController < ApplicationController
   def create
     @spot = Spot.find(params[:spot_id])
     @advice = @spot.advices.build(advice_params)
-    @advice = insert_place @advice if params[:picture] != nil
+    @advice = insert_place @advice if params[:advice][:picture] != nil
     @advice.user = current_user
     if @advice.save
       redirect_to controller: 'spots', action: 'show', id: @advice.spot_id
@@ -25,6 +25,8 @@ class AdvicesController < ApplicationController
 
   def show
     @advice = Advice.find(params[:id])
+    @comments = Comment.where(advice_id: @advice.id)
+    @comment = Comment.new
   end
 
   def edit
@@ -41,6 +43,7 @@ class AdvicesController < ApplicationController
   end
 
   def destroy
+    @advice = Advice.find(params[:id])
     @advice.destroy
     flash[:success] = "advide deleted"
     redirect_to controller: 'spots', action: 'show', id: @advice.spot_id
