@@ -11,7 +11,7 @@
   </div>
   <div class="row main">
     <div class="col s12">
-      <h5><%= @advice.spot.place_name %></h5>    
+      <h5><%= @advice.spot.place_name %></h5>
       <div class="advice-header">
         <%= link_to @advice.user.name, @advice.user, class: "name" %>
         <time class="grey-text"><%= @advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
@@ -19,8 +19,10 @@
       <p><%= @advice.comment %></p>
     </div>
     <div class="col s12">
-      <div class="buttons", id=<%= "like-button-#{@advice.id}" %>>
-        <%= render :partial => "like", locals: { advice: @advice} %>
+      <div class="buttons">
+        <div class="like-button" id=<%= "like-button-#{@advice.id}" %>>
+            <%= render :partial => "like", locals: { advice: @advice} %>
+        </div>
         <% if @advice.lat != nil && @advice.lng != nil %>
           <%= link_to "地図で開く",
               show_map_url(@advice.lat,@advice.lng),
