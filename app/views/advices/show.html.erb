@@ -21,8 +21,8 @@
     <div class="col s12">
       <div class="buttons", id=<%= "like-button-#{@advice.id}" %>>
         <%= render :partial => "like", locals: { advice: @advice} %>
-        </div>
-        <div class="buttons">
+      </div>
+      <div class="buttons">
         <% if @advice.lat != nil && @advice.lng != nil %>
           <%= link_to "地図で開く",
               show_map_url(@advice.lat,@advice.lng),
