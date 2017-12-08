@@ -4,6 +4,7 @@ class SpotsController < ApplicationController
     @spots = Spot.search(params[:search])
     if params[:lat].present? && params[:lng].present?
       @spots = @spots.within(params[:distance], :origin => [params[:lat], params[:lng]]).by_distance(:origin => [params[:lat], params[:lng]])
+      @distance = params[:distance]
     end
   end
 
