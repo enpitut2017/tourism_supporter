@@ -70,6 +70,29 @@ form.search_form {
   display: block;
 }
 
+.search-area {
+  display: flex;
+  align-items: baseline;
+}
+
+.search-area .search_form {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.search-area .buttons .btn {
+  padding: 0 1rem;
+}
+
+.setting-header {
+  display: flex;
+  align-items: baseline;
+}
+
+.setting-header .title {
+  flex: 1;
+}
+
 @media only screen and (min-width: 600px) {
   .spots div {
     height: 340px;

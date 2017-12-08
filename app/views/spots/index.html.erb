@@ -1,15 +1,21 @@
 <% provide :header_title, 'フォトフォーラム' %>
 
-<%= form_tag(spots_path, method: "get", id: "location-form", class: "search_form row") do %>
-  <div class="input-field col s12">
-    <%= text_field_tag :search,  params[:search], :placeholder => 'キーワード検索' %>
-    <p> 現在地から検索する範囲を選択してください </p>
-    <input type="range" name="distance" min="1" max="20">
-    <input id='location-button' type='button' value="現在地から検索">
-    <%= hidden_field_tag 'lat'%>
-    <%= hidden_field_tag 'lng'%>
+<div class="row">
+  <div class="col s12 search-area">
+    <%= form_tag(spots_path, method: "get", id: "search-form", class: "search_form") do %>
+      <div class="input-field">
+        <%= text_field_tag :search,  params[:search], :placeholder => 'キーワード検索' %>
+        <%= hidden_field_tag 'distance', @distance, id: 'distance'%>
+        <%= hidden_field_tag 'lat', nil,  id: 'lat' %>
+        <%= hidden_field_tag 'lng', nil,  id: 'lng' %>
+      </div>
+    <% end %>
+    <div class="buttons">
+      <button id="search-submit" class="waves-effect waves-light btn"><i class="material-icons">search</i></button>
+      <a class="waves-effect waves-light btn modal-trigger" href="#search-setting"><i class="material-icons">dehaze</i></a>
+    </div>
   </div>
-<% end %>
+</div>
 
 <% if @spots.blank? %>
   <session class="search_result">
@@ -31,3 +37,28 @@
     <% end %>
   </div>
 <% end %>
+
+<div id="search-setting" class="modal search-setting">
+  <div class="modal-content">
+    <h4>検索の詳細設定</h4>
+    <div class="setting-header">
+      <div class="title">
+        距離での絞り込み(km)
+      </div>
+      <div class="button">
+        <div class="switch">
+          <label>
+            <input id="distance-button" type="checkbox" <% if @distance.present? then %>checked="checked"<% end %>>
+            <span class="lever"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <p id="distance-range-field" class="range-field">
+      <input id="distance-range" type="range" name="distance" min="1" max="20" value=<%= @distance %>>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" id="finish-detail-settings" class="modal-action modal-close waves-effect waves-green btn-flat">完了</a>
+  </div>
+</div>
