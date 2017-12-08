@@ -40,7 +40,7 @@ $('#location-button').click(function() {
 });
 
 var show_distance_range_field = function() {
-  if ($(this).prop('checked')) {
+  if ($('#distance-button').prop('checked')) {
     $('#distance-range-field').show();
   } else {
     $('#distance-range-field').hide();
