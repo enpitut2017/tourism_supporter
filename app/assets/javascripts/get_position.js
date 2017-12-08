@@ -1,3 +1,15 @@
+$(function(){
+  show_distance_range_field();
+
+  $('#distance-button').on('change', function () {
+    if ($(this).prop('checked')) {
+      $('#distance-range-field').slideDown();
+    } else {
+      $('#distance-range-field').slideUp()
+    }
+  });
+});
+
 $('#location-button').click(function() {
   // 現在地を取得
   navigator.geolocation.getCurrentPosition(
@@ -26,3 +38,11 @@ $('#location-button').click(function() {
     }
   );
 });
+
+var show_distance_range_field = function() {
+  if ($(this).prop('checked')) {
+    $('#distance-range-field').show();
+  } else {
+    $('#distance-range-field').hide();
+  }
+};
