@@ -2,12 +2,12 @@
 
 <div class="row">
   <div class="col s12 search-area">
-    <%= form_tag(spots_path, method: "get", id: "location-form", class: "search_form") do %>
+    <%= form_tag(spots_path, method: "get", id: "search-form", class: "search_form") do %>
       <div class="input-field">
         <%= text_field_tag :search,  params[:search], :placeholder => 'キーワード検索' %>
-        <%= hidden_field_tag 'distance'%>
-        <%= hidden_field_tag 'lat'%>
-        <%= hidden_field_tag 'lng'%>
+        <%= hidden_field_tag 'distance', @distance, id: 'distance'%>
+        <%= hidden_field_tag 'lat', nil,  id: 'lat' %>
+        <%= hidden_field_tag 'lng', nil,  id: 'lng' %>
       </div>
     <% end %>
     <div class="buttons">
@@ -55,10 +55,10 @@
       </div>
     </div>
     <p id="distance-range-field" class="range-field">
-      <input id="distance-range" type="range" name="distance" min="1" max="20">
+      <input id="distance-range" type="range" name="distance" min="1" max="20" value=<%= @distance %>>
     </p>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">完了</a>
+    <a href="#!" id="finish-detail-settings" class="modal-action modal-close waves-effect waves-green btn-flat">完了</a>
   </div>
 </div>
