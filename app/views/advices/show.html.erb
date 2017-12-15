@@ -10,15 +10,13 @@
   </div>
   </div>
   <div class="row main">
-    <div class="col s12">
+    <div class="col s12 l8">
       <h5><%= @advice.spot.place_name %></h5>
       <div class="advice-header">
         <%= link_to @advice.user.name, @advice.user, class: "name" %>
         <time class="grey-text"><%= @advice.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
       </div>
       <p><%= @advice.comment %></p>
-    </div>
-    <div class="col s12">
       <div class="buttons">
         <div class="like-button" id=<%= "like-button-#{@advice.id}" %>>
             <%= render :partial => "like", locals: { advice: @advice} %>
@@ -36,6 +34,8 @@
           <%= link_to "DELETE", @advice, class: "waves-effect waves-teal btn", method: :delete, data: { confirm: "You sure?" } %>
         </div>
       <% end %>
+    </div>
+    <div class="col s12 l4">
       <%= render 'application/comment', comments: @comments if @comments.present? %>
 
       <% if logged_in? %>
