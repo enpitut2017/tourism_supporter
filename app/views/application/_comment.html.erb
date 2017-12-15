@@ -1,8 +1,17 @@
-<% comments.each do |comment| %>
-  <%= comment.user.name %>
-  <%= comment.content %>
-  <% if current_user == comment.user %>
-    <%= link_to "DELETE", comment, class: "waves-effect waves-teal btn", method: :delete, data: { confirm: "You sure?" } %>
-  <% end %>
-  <br>
-<% end %>
+<section class="comments">
+  <h5>コメント</h5>
+  <ul class="collection">
+    <% comments.each do |comment| %>
+      <li class="collection-item">
+        <div class="advice-header">
+          <%= link_to comment.user.name, comment.user, class: "name" %>
+          <time class="grey-text"><%= comment.created_at.strftime('%Y年%m月%d日 %H:%M') %></time>
+        </div>
+        <p><%= comment.content %></p>
+        <% if current_user == comment.user %>
+          <%= link_to "DELETE", comment, class: "waves-effect waves-teal btn", method: :delete, data: { confirm: "You sure?" } %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</section>
