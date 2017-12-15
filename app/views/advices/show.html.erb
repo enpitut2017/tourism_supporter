@@ -40,10 +40,12 @@
 
       <% if logged_in? %>
         <%= form_for([@advice, @comment]) do |f| %>
-          <%= f.label :content, "コメント", class: "active" %>
-          <%= f.text_area :content, class: "materialize-textarea", id: "advice-comment" %>
+          <div class="input-field">
+            <%= f.text_area :content, class: "materialize-textarea", id: "advice-comment" %>
+            <label for="advice-comment">コメント</label>
+          </div>
           <div class="buttons">
-            <%= f.submit "COMMENT", class: "waves-effect waves-light btn" %>
+            <%= button_tag "送信", type: "submit", class: "waves-effect waves-light btn" %>
           </div>
         <% end %>
 
