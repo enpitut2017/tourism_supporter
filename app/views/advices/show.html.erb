@@ -36,7 +36,7 @@
           <%= link_to "DELETE", @advice, class: "waves-effect waves-teal btn", method: :delete, data: { confirm: "You sure?" } %>
         </div>
       <% end %>
-      <%= render 'application/comment', comments: @comments %>
+      <%= render 'application/comment', comments: @comments if @comments.present? %>
 
       <% if logged_in? %>
         <%= form_for([@advice, @comment]) do |f| %>
